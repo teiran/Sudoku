@@ -7,7 +7,7 @@
  * valita mahdollisesti vaikeus aste
  * valita ruutu johon laittaa jokun numero 1-9 väliltä
  * valita haluaako pelata uudelleen
- 
+
  **Peljaana toiminnot:**
  * valita mahdollisesti vaikeus aste
  * valita ruutu johon laittaa jokun numero 1-9 väliltä
