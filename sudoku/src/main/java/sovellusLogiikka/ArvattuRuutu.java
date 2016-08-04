@@ -20,11 +20,12 @@ public class ArvattuRuutu {
     }
     
     public void lisaanumero(int numero){
-        if (numero > 10 || numero < 1) {
+        if (numero > 9 || numero < 1) {
             return;
         }
-        if(numerot.isEmpty()){
+        if(numerot.get(0) == -1){
             numerot.add(numero);
+            numerot.remove(0);
         } else if (!numerot.contains(numero)) {
             numerot.add(numero);
         }
@@ -38,10 +39,13 @@ public class ArvattuRuutu {
         if (!numerot.isEmpty()) {
             numerot.remove(numerot.size()-1);
         }
+        if (numerot.isEmpty()) {
+            numerot.add(-1);
+        }
     }
     
     public int vainyksinumero(){
-        if (numerot.size() == 1) {
+        if (numerot.size() == 1 && numerot.get(0) != -1) {
             return numerot.get(0);
         }
         return 0;

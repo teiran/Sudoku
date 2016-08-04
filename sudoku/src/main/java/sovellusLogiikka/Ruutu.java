@@ -32,7 +32,7 @@ public class Ruutu {
         aravatutnumerot.delnumero();
     }
     
-    public ArrayList ruudunnumerot(){
+    public ArrayList<Integer> ruudunnumerot(){
         if (tarkistettu) {
             return ratkaisu;
         }
