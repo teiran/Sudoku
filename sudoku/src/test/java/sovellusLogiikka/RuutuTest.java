@@ -40,6 +40,7 @@ public class RuutuTest {
     /**
      * Test of lisaaarvaus method, of class Ruutu.
      */
+    /**
     @Test
     public void testLisaaarvaus() {
         System.out.println("lisaaarvaus");
@@ -58,9 +59,7 @@ public class RuutuTest {
         
     }
 
-    /**
-     * Test of poistanumero method, of class Ruutu.
-     */
+   
     @Test
     public void testPoistanumero() {
         System.out.println("poistanumero");
@@ -78,9 +77,7 @@ public class RuutuTest {
         assertEquals(true, y == -1);
     }
 
-    /**
-     * Test of ruudunnumerot method, of class Ruutu.
-     */
+  
     @Test
     public void testRuudunnumerot() {
         System.out.println("ruudunnumerot");
@@ -89,9 +86,7 @@ public class RuutuTest {
         assertEquals(true, y == 3);
     }
 
-    /**
-     * Test of tarkista method, of class Ruutu.
-     */
+   
     @Test
     public void testTarkista() {
         System.out.println("tarkista");
@@ -109,5 +104,5 @@ public class RuutuTest {
         y = k.ruudunnumerot().get(0);
         assertEquals(true, y == -1);
     }
-    
+    */
 }

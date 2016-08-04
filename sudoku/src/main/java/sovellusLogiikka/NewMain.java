@@ -17,7 +17,7 @@ public class NewMain {
     public static void main(String[] args) {
         Ruudukko z = new Ruudukko();
         System.out.println(z);
-        System.out.println(z.toString2());
+        
     }
     
 }

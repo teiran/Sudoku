@@ -22,25 +22,14 @@ public class Ruudukko {
         ruudukko = new Ruutu[x][y];
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
-                boolean k = (sudokukartat.getAloitukartta()[i][j] == sudokukartat.getValmiskartta()[i][j]);
-                ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j], k);
+                ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]);
             }
         }
     }
 
-    @Override
-    public String toString() {
-        String k = "";
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
-                k +=  ruudukko[j][i].ruudunnumerot().get(0) +" ";
-            }
-            k += "\n";   
-        }
-        return k;
-    }
+
     
-    public String toString2(){
+    public String toString(){
         String k = "";
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
