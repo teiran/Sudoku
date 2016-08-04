@@ -38,71 +38,37 @@ public class RuutuTest {
     }
 
     /**
-     * Test of lisaaarvaus method, of class Ruutu.
+     * Test of setArvaus method, of class Ruutu.
      */
+    @Test
+    public void testSetArvaus() {
+        System.out.println("setArvaus");
+        Ruutu k = new Ruutu(1);
+        k.setArvaus(3);
+        assertEquals(3, k.getArvaus());
+        k.setArvaus(1);
+        assertEquals(1, k.getArvaus());
+        k.setArvaus(9);
+        assertEquals(9, k.getArvaus());
+        k.setArvaus(10);
+        assertEquals(9, k.getArvaus());
+        k.setArvaus(-1);
+        assertEquals(9, k.getArvaus());
+        k.setArvaus(0);
+        assertEquals(9, k.getArvaus());
+    }
+
     /**
-    @Test
-    public void testLisaaarvaus() {
-        System.out.println("lisaaarvaus");
-        Ruutu k = new Ruutu(3, false);
-        k.lisaaarvaus(4);
-        int y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == 4);
-        
-        
-        k = new Ruutu(3, false);
-        k.lisaaarvaus(-9);
-        y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == -1);
-        
-        
-        
-    }
-
-   
-    @Test
-    public void testPoistanumero() {
-        System.out.println("poistanumero");
-        Ruutu k = new Ruutu(3, false);
-        k.lisaaarvaus(4);
-        k.poistanumero();
-        int y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == -1);
-        
-        
-        k = new Ruutu(3, false);
-        k.lisaaarvaus(-9);
-        k.poistanumero();
-        y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == -1);
-    }
-
-  
-    @Test
-    public void testRuudunnumerot() {
-        System.out.println("ruudunnumerot");
-        Ruutu k = new Ruutu(3, true);
-        int y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == 3);
-    }
-
-   
+     * Test of tarkista method, of class Ruutu.
+     */
     @Test
     public void testTarkista() {
         System.out.println("tarkista");
-        Ruutu k = new Ruutu(3, false);
-        k.lisaaarvaus(3);
-        k.tarkista();
-        int y = k.ruudunnumerot().get(0);
-        
-        assertEquals(true, y == 3);
-        
-        
-        k = new Ruutu(3, false);
-        k.lisaaarvaus(-9);
-        k.tarkista();
-        y = k.ruudunnumerot().get(0);
-        assertEquals(true, y == -1);
+        Ruutu k = new Ruutu(1);
+        k.setArvaus(3);
+        assertEquals(false, k.tarkista());
+        k.setArvaus(1);
+        assertEquals(true, k.tarkista());
     }
-    */
+    
 }

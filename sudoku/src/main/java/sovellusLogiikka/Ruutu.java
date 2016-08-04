@@ -21,12 +21,8 @@ public class Ruutu {
     }
 
     public void setArvaus(int arvaus) {
-        this.arvaus = arvaus;
-    }
-    
-    public void lisaaarvaus(int numero){
-        if ((numero <= 9) && (numero >= 1)) {
-            arvaus = numero;
+        if (0 < arvaus && 10 > arvaus) {
+            this.arvaus = arvaus;
         }
     }
 
