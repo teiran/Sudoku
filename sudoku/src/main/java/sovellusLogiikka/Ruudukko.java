@@ -11,17 +11,15 @@ package sovellusLogiikka;
  */
 public class Ruudukko {
     private Ruutu[][] ruudukko;
-    private int x;
-    private int y;
+    private final int leveys = 9;
+    private final int korkeus = 9;
     private Valmiitkartat sudokukartat;
 
     public Ruudukko() {
         sudokukartat = new Valmiitkartat();
-        x = 9;
-        y = 9;
-        ruudukko = new Ruutu[x][y];
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
+        ruudukko = new Ruutu[leveys][korkeus];
+        for (int i = 0; i < leveys; i++) {
+            for (int j = 0; j < korkeus; j++) {
                 ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]);
             }
         }
@@ -31,8 +29,8 @@ public class Ruudukko {
     
     public String toString(){
         String k = "";
-        for (int i = 0; i < x; i++) {
-            for (int j = 0; j < y; j++) {
+        for (int i = 0; i < leveys; i++) {
+            for (int j = 0; j < korkeus; j++) {
                 k +=  sudokukartat.getValmiskartta()[j][i]+" ";
             }
             k += "\n";   
