@@ -8,13 +8,12 @@ package kayttoliityma;
 import javax.swing.JButton;
 import sovellusLogiikka.Ruutu;
 
-
-
 /**
  *
  * @author tiera
  */
-public class Ruutunappulat extends JButton{
+public class Ruutunappulat extends JButton {
+
     private Ruutu ruutu;
 
     public Ruutunappulat(Ruutu ruutu) {
@@ -25,7 +24,13 @@ public class Ruutunappulat extends JButton{
             this.setText("");
         }
     }
-    
-    
-    
+
+    public void tartkista() {
+        if (ruutu.tarkista()) {
+            this.setText("" + ruutu.getRatkaisu());
+        } else {
+            this.setText("");
+        }
+    }
+
 }
