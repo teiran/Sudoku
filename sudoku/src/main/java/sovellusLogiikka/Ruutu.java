@@ -29,6 +29,11 @@ public class Ruutu {
     public int getArvaus() {
         return arvaus;
     }
+
+    public int getRatkaisu() {
+        return ratkaisu;
+    }
+    
     
     public boolean tarkista(){
         return (arvaus == ratkaisu);

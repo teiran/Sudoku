@@ -150,6 +150,13 @@ public class Valmiitkartat {
         lisaa("168f");
         lisaa("778t");
         lisaa("988t");
+        
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                aloitukartta[i][j] = aloitukartta[j][i];
+                valmiskartta[i][j] = aloitukartta[j][i];
+            }
+        }
 
     }
 

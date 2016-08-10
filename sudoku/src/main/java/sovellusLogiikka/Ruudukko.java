@@ -23,9 +23,18 @@ public class Ruudukko {
                 ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]);
             }
         }
+        for (int i = 0; i < leveys; i++) {
+            for (int j = 0; j < korkeus; j++) {
+                ruudukko[i][j].setArvaus(sudokukartat.getAloitukartta()[i][j]);
+            }
+        }
     }
 
+    public Ruutu[][] getRuudukko() {
+        return ruudukko;
+    }
 
+    
     
     public String toString(){
         String k = "";
