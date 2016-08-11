@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import sovellusLogiikka.Ruudukko;
+import sovellusLogiikka.Ruutu;
 
 /**
  *
@@ -28,13 +29,11 @@ public class Kayttoliityma implements Runnable {
     private int korkeus;
     private Ruudukko taulukko;
 
-    public Kayttoliityma( int leveys, int korkeus) {
+    public Kayttoliityma(int leveys, int korkeus) {
         this.leveys = leveys;
         this.korkeus = korkeus;
         this.taulukko = new Ruudukko();
     }
-
-    
 
     @Override
     public void run() {
@@ -44,19 +43,27 @@ public class Kayttoliityma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luokomponentti(frame.getContentPane());
+        
 
         frame.pack();
         frame.setVisible(true);
+
+        
+        
 
     }
 
     private void luokomponentti(Container container) {
         frame.setLayout(new GridLayout(9, 9));
         for (int i = 0; i < korkeus; i++) {
-            for (int j = 0; j < leveys; j++) {              
-                frame.add(new Ruutunappulat(taulukko.getRuudukko()[i][j]));
+            for (int j = 0; j < leveys; j++) {
+                Ruutunappulat s = taulukko.getRuudukko()[i][j].getK();
+                s.addKeyListener(new Nappaimistonkuuntelijat(s));
+                Napinkuuntelija n = new Napinkuuntelija(s);
+                s.addActionListener(n);
+                frame.add(s);
             }
-            
+
         }
 
     }
