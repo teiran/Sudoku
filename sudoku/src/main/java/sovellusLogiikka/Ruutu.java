@@ -22,24 +22,43 @@ public class Ruutu {
         aktiivisuus = false;
 
     }
-
-    //arvausta muutaessa tarvittava setArvaus
+    /*
+     * arvausta muutaessa tarvittava setArvaus
+     * 
+     * @param arvaus on Ruutubuttonnin kautta lisnerista tuleva arvo
+    */
+    //
     public void setArvaus(int arvaus) {
         if (0 < arvaus && 10 > arvaus) {
             this.arvaus = arvaus;
         }
     }
-
-    //getArvaus ja getRatkaisulla buttom saa ruudun sisältämän tiedon
+    /*
+     * getArvausbuttom saa ruudun sisältämän tiedon
+     * 
+     * @return palauttaa Arvatun arvon buttonille
+    */
+    //
     public int getArvaus() {
         return arvaus;
     }
+    
+    /*
+     * getRatkaisulla buttom saa ruudun sisältämän tiedon
+     *
+     *@return palauttaa sudokuruudun ratkasun
+    */
 
     public int getRatkaisu() {
         return ratkaisu;
     }
-
-    //tarkistaessa käytettävä
+    
+    /*
+     * tarkistaessa käytettävä
+     *
+     * @return palauttaa true jos arvaus ja ratkaisu on sama
+    */
+    //
     public boolean tarkista() {
         return (arvaus == ratkaisu);
     }
