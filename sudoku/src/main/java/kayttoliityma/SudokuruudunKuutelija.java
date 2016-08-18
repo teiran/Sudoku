@@ -3,7 +3,7 @@ package kayttoliityma;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import kayttoliityma.RuutuButtom;
+import kayttoliityma.RuutuButton;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,10 +15,10 @@ import kayttoliityma.RuutuButtom;
  *
  * @author tiera
  */
-public class Napinkuuntelija implements ActionListener{
-    private RuutuButtom t;
+public class SudokuruudunKuutelija implements ActionListener{
+    private RuutuButton t;
 
-    public Napinkuuntelija(RuutuButtom t) {
+    public SudokuruudunKuutelija(RuutuButton t) {
         this.t = t;
     }
     
@@ -26,7 +26,7 @@ public class Napinkuuntelija implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        t.setAktiivisuus();
+        t.setAktiivisuusToFalse();
         
     }
     

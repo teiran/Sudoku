@@ -14,11 +14,11 @@ import sovellusLogiikka.Ruutu;
  *
  * @author tiera
  */
-public class Nappaimistonkuuntelijat implements KeyListener{
-    private RuutuButtom k;
+public class SuodokuruudunKeyKuuntelija implements KeyListener{
+    private RuutuButton button;
 
-    public Nappaimistonkuuntelijat(RuutuButtom k) {
-        this.k = k;
+    public SuodokuruudunKeyKuuntelija(RuutuButton k) {
+        this.button = k;
     }
 
     
@@ -29,19 +29,18 @@ public class Nappaimistonkuuntelijat implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         System.out.println(Integer.parseInt(e.getKeyChar() + ""));
-        
-        k.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
-        k.uusiarvaus();
+        button.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
+        button.uusiarvaus();
         
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

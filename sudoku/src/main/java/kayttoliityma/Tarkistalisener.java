@@ -13,9 +13,9 @@ import java.awt.event.ActionListener;
  * @author tiera
  */
 public class Tarkistalisener implements ActionListener{
-    private final TarkistusButtom buttom;
+    private final TarkistusButton buttom;
 
-    public Tarkistalisener(TarkistusButtom buttom) {
+    public Tarkistalisener(TarkistusButton buttom) {
         this.buttom = buttom;
     }
     

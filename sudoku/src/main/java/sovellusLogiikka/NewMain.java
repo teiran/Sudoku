@@ -17,8 +17,7 @@ public class NewMain {
      */
     public static void main(String[] args) {
         Ruudukko z = new Ruudukko();
-        System.out.println(z);
-        Kayttoliityma kayttoliittyma = new Kayttoliityma(9, 9);
+        Kayttoliityma kayttoliittyma = new Kayttoliityma(z);
         SwingUtilities.invokeLater(kayttoliittyma);
         
     }

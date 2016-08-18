@@ -19,15 +19,11 @@ import sovellusLogiikka.Ruudukko;
 public class Kayttoliityma implements Runnable {
 
     private JFrame frame;
-    private final int leveys;
-    private final int korkeus;
     private final Ruudukko taulukko;
-    private TarkistusButtom tarkista;
+    private TarkistusButton tarkista;
 
-    public Kayttoliityma(int leveys, int korkeus) {
-        this.leveys = leveys;
-        this.korkeus = korkeus;
-        this.taulukko = new Ruudukko();
+    public Kayttoliityma(Ruudukko r) {
+        this.taulukko = r;
     }
 
     @Override
@@ -38,35 +34,29 @@ public class Kayttoliityma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luokomponentti(frame.getContentPane());
-        tarkista = new TarkistusButtom(taulukko);
-        tarkista.addActionListener(new Tarkistalisener(tarkista));
-        frame.add(tarkista);
 
         frame.pack();
         frame.setVisible(true);
-
-        
-        
 
     }
 
     private void luokomponentti(Container container) {
         frame.setLayout(new GridLayout(10, 10));
-        for (int i = 0; i < korkeus; i++) {
-            for (int j = 0; j < leveys; j++) {
-                RuutuButtom s = taulukko.getRuudukko()[i][j].getButtom();
-                s.addKeyListener(new Nappaimistonkuuntelijat(s));
-                Napinkuuntelija n = new Napinkuuntelija(s);
+        for (int i = 0; i < taulukko.getKorkeus(); i++) {
+            for (int j = 0; j < taulukko.getLeveys(); j++) {
+                RuutuButton s = taulukko.getRuudukko()[i][j];
+                s.addKeyListener(new SuodokuruudunKeyKuuntelija(s));
+                SudokuruudunKuutelija n = new SudokuruudunKuutelija(s);
                 s.addActionListener(n);
-                frame.add(s);
+                container.add(s);
             }
 
         }
 
-    }
+        tarkista = new TarkistusButton(taulukko);
+        tarkista.addActionListener(new Tarkistalisener(tarkista));
+        container.add(tarkista);
 
-    public JFrame getFrame() {
-        return frame;
     }
 
 }

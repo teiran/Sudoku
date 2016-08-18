@@ -5,53 +5,33 @@
  */
 package sovellusLogiikka;
 
+import kayttoliityma.RuutuButton;
+
 /**
  *
  * @author tiera
  */
 public class Ruudukko {
 
-    private final Ruutu[][] ruudukko;
+    private final RuutuButton[][] ruudukko;
     private final int leveys = 9;
     private final int korkeus = 9;
     private final Valmiitkartat sudokukartat;
 
     public Ruudukko() {
         sudokukartat = new Valmiitkartat();
-        ruudukko = new Ruutu[leveys][korkeus];
+        ruudukko = new RuutuButton[leveys][korkeus];
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
-                ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]); //luodaan ruudut
+                ruudukko[i][j] = new RuutuButton(sudokukartat.getValmiskartta()[i][j], sudokukartat.getAloitukartta()[i][j]); //luodaan ruudut
             }
         }
-        for (int i = 0; i < leveys; i++) {
-            for (int j = 0; j < korkeus; j++) {
-                ruudukko[i][j].setArvaus(sudokukartat.getAloitukartta()[i][j]); //annetaan aloitus arvaus
-                ruudukko[i][j].luoButtom(); //luodaan graafiset ruudut
-            }
-        }
-    }
-
-    public Ruutu oikearuutu() {
-        for (Ruutu[] ruutus : ruudukko) {
-            for (Ruutu ruutu : ruutus) {
-                if (ruutu.getAktiivisuus()) {
-                    for (Ruutu[] ruutus1 : ruudukko) {
-                        for (Ruutu ruutu1 : ruutus) {
-                            ruutu1.setAktiivisuus();
-                        }
-                    }
-                    return ruutu;
-                }
-            }
-        }
-        return null;
-    }
+    }  
 
     public boolean valmis() {
-        for (Ruutu[] ruutus : ruudukko) {
-            for (Ruutu ruutu : ruutus) {
-                if (!ruutu.tarkista()) {
+        for (RuutuButton[] ruutus : ruudukko) {
+            for (RuutuButton ruutu : ruutus) {
+                if (!ruutu.getTarkistetu()) {
                     return true;
                 }
 
@@ -59,19 +39,24 @@ public class Ruudukko {
         }
         return false;
     }
-    
+    //tutkii ja lukistee ruudut jotak on oiken painettaessa Tarkista nappulaa
     public void tarkista(){
-        for (Ruutu[] ruutus : ruudukko) {
-            for (Ruutu ruutu : ruutus) {
-                ruutu.getButtom().tartkista();
+        for (RuutuButton[] ruutus : ruudukko) {
+            for (RuutuButton ruutu : ruutus) {
+                ruutu.tartkista();
             }
         }
     }
-
-    public Ruutu[][] getRuudukko() {
+    //Ruudukkon graafista käyttöliitymää käytettäsessa tarvittava metodi joka kautta päästään käsiksi Buttomeihen
+    public RuutuButton[][] getRuudukko() {
         return ruudukko;
     }
 
+    public int getKorkeus() {
+        return korkeus;
+    }
 
-
+    public int getLeveys() {
+        return leveys;
+    }
 }

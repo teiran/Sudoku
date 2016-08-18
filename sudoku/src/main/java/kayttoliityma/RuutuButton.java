@@ -13,14 +13,15 @@ import sovellusLogiikka.Ruutu;
  *
  * @author tiera
  */
-public class RuutuButtom extends JButton {
+public class RuutuButton extends JButton {
 
     private final Ruutu ruutu;
-    private boolean tarkistettu;
-    private boolean aktiivisuus;
-
-    public RuutuButtom(Ruutu ruutu) {
-        this.ruutu = ruutu;
+    private boolean tarkistettu; //mahdollistaa oikein olevian ruutujen lukitsemisen
+    private boolean aktiivisuus; //mahdollistaa oikean ruudun hiirellä valitsemisen
+    
+    
+    public RuutuButton(int rat, int arvaus) {
+        this.ruutu = new Ruutu(rat, arvaus);
         aktiivisuus = false;
         if (ruutu.tarkista()) {
             this.setText("" + ruutu.getRatkaisu());
@@ -31,15 +32,25 @@ public class RuutuButtom extends JButton {
         }
 
     }
-
-    public void muutaarvausta(int i) {
-        ruutu.setArvaus(i);
+    
+    public boolean getTarkistetu(){
+        return tarkistettu;
     }
-
+    
+    //SudokuruudunKeyKuuntelijan käyttämä metodi joka mahdollistaa ruudun arvon muutamisen
+    public void muutaarvausta(int i) {
+        if (!tarkistettu) {
+            ruutu.setArvaus(i);
+        }
+        
+    }
+    
+    //oikean Ruudun hiirellä löytämiseen tarvittava arvo (Ruudukko käyttää)
     public boolean getAktiivisuus() {
         return aktiivisuus;
     }
-
+    
+    //onko ruudun numero oiken tutkiva metodi
     public void tartkista() {
         if (ruutu.tarkista()) {
             this.setText("" + ruutu.getRatkaisu());
@@ -49,7 +60,7 @@ public class RuutuButtom extends JButton {
             tarkistettu = false;
         }
     }
-
+    //ruudun saadessa uuden arvauksen se tapahtuu tämän kautta
     public void uusiarvaus() {
         if (ruutu.tarkista()) {
             this.setText("" + ruutu.getRatkaisu());
@@ -64,8 +75,8 @@ public class RuutuButtom extends JButton {
             }
         }
     }
-
-    public void setAktiivisuus() {
+    //mahdollistaa oikean ruudun valitsemisen (muiden lukitsemisen) hiirellä
+    public void setAktiivisuusToFalse() {
         aktiivisuus = false;
     }
 

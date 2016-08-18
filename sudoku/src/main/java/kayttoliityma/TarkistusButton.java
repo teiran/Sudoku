@@ -12,11 +12,11 @@ import sovellusLogiikka.Ruudukko;
  *
  * @author tiera
  */
-public class TarkistusButtom extends JButton{
+public class TarkistusButton extends JButton{
 
     private final Ruudukko taulukko;
 
-    public TarkistusButtom(Ruudukko taulukko) {
+    public TarkistusButton(Ruudukko taulukko) {
         this.taulukko = taulukko;
         this.setText("Tarkista");
     }
