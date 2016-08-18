@@ -11,8 +11,8 @@ package sovellusLogiikka;
  */
 public class Valmiitkartat {
 
-    private int[][] valmiskartta;
-    private int[][] aloitukartta;
+    private final int[][] valmiskartta;
+    private final int[][] aloitukartta;
 
     public Valmiitkartat() {
         valmiskartta = new int[9][9];
@@ -40,11 +40,11 @@ public class Valmiitkartat {
         return aloitukartta;
     }
 
-    private void lisaanumerov(int t, int x, int y) {
+    private void lisaanumerov(int t, int y, int x) {
         valmiskartta[x][y] = t;
     }
 
-    private void lisaanumeroa(int t, int x, int y) {
+    private void lisaanumeroa(int t, int y, int x) {
         aloitukartta[x][y] = t;
     }
 
@@ -143,7 +143,7 @@ public class Valmiitkartat {
 
         lisaa("308f");
         lisaa("418f");
-        lisaa("228f");
+        lisaa("528f");
         lisaa("238f");
         lisaa("848t");
         lisaa("658f");
@@ -151,12 +151,6 @@ public class Valmiitkartat {
         lisaa("778t");
         lisaa("988t");
         
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                aloitukartta[i][j] = aloitukartta[j][i];
-                valmiskartta[i][j] = aloitukartta[j][i];
-            }
-        }
 
     }
 

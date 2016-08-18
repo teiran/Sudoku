@@ -15,9 +15,9 @@ import sovellusLogiikka.Ruutu;
  * @author tiera
  */
 public class Nappaimistonkuuntelijat implements KeyListener{
-    private Ruutunappulat k;
+    private RuutuButtom k;
 
-    public Nappaimistonkuuntelijat(Ruutunappulat k) {
+    public Nappaimistonkuuntelijat(RuutuButtom k) {
         this.k = k;
     }
 
@@ -32,7 +32,7 @@ public class Nappaimistonkuuntelijat implements KeyListener{
         
         k.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
         k.uusiarvaus();
-        System.out.println("gdfdfgasdas");
+        
     }
 
     @Override

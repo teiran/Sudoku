@@ -5,10 +5,7 @@
  */
 package kayttoliityma;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
+
 import javax.swing.JButton;
 import sovellusLogiikka.Ruutu;
 
@@ -16,13 +13,13 @@ import sovellusLogiikka.Ruutu;
  *
  * @author tiera
  */
-public class Ruutunappulat extends JButton {
+public class RuutuButtom extends JButton {
 
-    private Ruutu ruutu;
+    private final Ruutu ruutu;
     private boolean tarkistettu;
     private boolean aktiivisuus;
 
-    public Ruutunappulat(Ruutu ruutu) {
+    public RuutuButtom(Ruutu ruutu) {
         this.ruutu = ruutu;
         aktiivisuus = false;
         if (ruutu.tarkista()) {
@@ -36,7 +33,7 @@ public class Ruutunappulat extends JButton {
     }
 
     public void muutaarvausta(int i) {
-        ruutu.setArvaus2(i);
+        ruutu.setArvaus(i);
     }
 
     public boolean getAktiivisuus() {

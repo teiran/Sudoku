@@ -5,18 +5,12 @@
  */
 package kayttoliityma;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import sovellusLogiikka.Ruudukko;
-import sovellusLogiikka.Ruutu;
 
 /**
  *
@@ -25,9 +19,10 @@ import sovellusLogiikka.Ruutu;
 public class Kayttoliityma implements Runnable {
 
     private JFrame frame;
-    private int leveys;
-    private int korkeus;
-    private Ruudukko taulukko;
+    private final int leveys;
+    private final int korkeus;
+    private final Ruudukko taulukko;
+    private TarkistusButtom tarkista;
 
     public Kayttoliityma(int leveys, int korkeus) {
         this.leveys = leveys;
@@ -43,7 +38,9 @@ public class Kayttoliityma implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luokomponentti(frame.getContentPane());
-        
+        tarkista = new TarkistusButtom(taulukko);
+        tarkista.addActionListener(new Tarkistalisener(tarkista));
+        frame.add(tarkista);
 
         frame.pack();
         frame.setVisible(true);
@@ -54,10 +51,10 @@ public class Kayttoliityma implements Runnable {
     }
 
     private void luokomponentti(Container container) {
-        frame.setLayout(new GridLayout(9, 9));
+        frame.setLayout(new GridLayout(10, 10));
         for (int i = 0; i < korkeus; i++) {
             for (int j = 0; j < leveys; j++) {
-                Ruutunappulat s = taulukko.getRuudukko()[i][j].getK();
+                RuutuButtom s = taulukko.getRuudukko()[i][j].getButtom();
                 s.addKeyListener(new Nappaimistonkuuntelijat(s));
                 Napinkuuntelija n = new Napinkuuntelija(s);
                 s.addActionListener(n);

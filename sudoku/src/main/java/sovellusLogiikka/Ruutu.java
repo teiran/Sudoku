@@ -5,8 +5,7 @@
  */
 package sovellusLogiikka;
 
-import java.util.ArrayList;
-import kayttoliityma.Ruutunappulat;
+import kayttoliityma.RuutuButtom;
 
 /**
  *
@@ -14,10 +13,10 @@ import kayttoliityma.Ruutunappulat;
  */
 public class Ruutu {
     private boolean tarkistettu;
-    private int ratkaisu;
+    private final int ratkaisu;
     private int arvaus;
     boolean aktiivisuus;
-    private Ruutunappulat k;
+    private RuutuButtom bottom;
 
     public Ruutu(int rat) { //täytyy vielä kehittää sopiva errori jos rat ei ole 1-9 välillä
         ratkaisu = rat;
@@ -25,25 +24,23 @@ public class Ruutu {
         
     }
 
-    public Ruutunappulat getK() {
-        return k;
-    }
-    
-  public void setArvaus2(int arvaus) {
-        if (0 < arvaus && 10 > arvaus) {
-            this.arvaus = arvaus;
-        }
-    }    
+    public RuutuButtom getButtom() {
+        return bottom;
+    } 
 
     public void setArvaus(int arvaus) {
         if (0 < arvaus && 10 > arvaus) {
             this.arvaus = arvaus;
         }
-        k = new Ruutunappulat(this);
+        
+    }
+    
+    public void luoButtom(){
+        bottom = new RuutuButtom(this);
     }
     
     public boolean getAktiivisuus(){
-        return k.getAktiivisuus();
+        return bottom.getAktiivisuus();
     }
 
     public int getArvaus() {
@@ -62,7 +59,7 @@ public class Ruutu {
     
     
       public void setAktiivisuus(){
-        k.setAktiivisuus();
+        bottom.setAktiivisuus();
     }
     
 }

@@ -11,22 +11,23 @@ package sovellusLogiikka;
  */
 public class Ruudukko {
 
-    private Ruutu[][] ruudukko;
+    private final Ruutu[][] ruudukko;
     private final int leveys = 9;
     private final int korkeus = 9;
-    private Valmiitkartat sudokukartat;
+    private final Valmiitkartat sudokukartat;
 
     public Ruudukko() {
         sudokukartat = new Valmiitkartat();
         ruudukko = new Ruutu[leveys][korkeus];
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
-                ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]);
+                ruudukko[i][j] = new Ruutu(sudokukartat.getValmiskartta()[i][j]); //luodaan ruudut
             }
         }
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
-                ruudukko[i][j].setArvaus(sudokukartat.getAloitukartta()[i][j]);
+                ruudukko[i][j].setArvaus(sudokukartat.getAloitukartta()[i][j]); //annetaan aloitus arvaus
+                ruudukko[i][j].luoButtom(); //luodaan graafiset ruudut
             }
         }
     }
@@ -58,20 +59,19 @@ public class Ruudukko {
         }
         return false;
     }
+    
+    public void tarkista(){
+        for (Ruutu[] ruutus : ruudukko) {
+            for (Ruutu ruutu : ruutus) {
+                ruutu.getButtom().tartkista();
+            }
+        }
+    }
 
     public Ruutu[][] getRuudukko() {
         return ruudukko;
     }
 
-    public String toString() {
-        String k = "";
-        for (int i = 0; i < leveys; i++) {
-            for (int j = 0; j < korkeus; j++) {
-                k += sudokukartat.getValmiskartta()[j][i] + " ";
-            }
-            k += "\n";
-        }
-        return k;
-    }
+
 
 }
