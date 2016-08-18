@@ -7,4 +7,5 @@ Päivä | Tunnit | Kuvaus
 04.08.2016 | 3h | Projeksin aloittaminen, testien luonti ja project filseien luontia (ja luokka kaavion uusiminen)
 10.08.2016 | 3h | Grafiikan suunnittelua ja aloittamista
 11.08.2016 | 6h | Grafiikan perjaatteessa toimivasksi saattamista
+18.08.2016 | 7h | grafiikan eteen päin, testejä ja koodin selkeyden parantamista
 ... | ... | ...
