@@ -4,4 +4,5 @@ Tarkoituksena on tehdä sudokupeli jolla pystyy pelaamaan sudokua. Tällähetkel
 
 [aiheenkuvaus](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/Aiheenmaarittely.md)
 [tuntikirjanpito](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/tuntikirjanpito.md)
+[linkki sivulle josta löytyy pit reportti ja chekingstyle](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/testejaa.md)
 
