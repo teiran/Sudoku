@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package sovellusLogiikka;
+
 import javax.swing.SwingUtilities;
 import kayttoliityma.Kayttoliityma;
+
 /**
  *
  * @author tiera
@@ -19,7 +21,7 @@ public class NewMain {
         Ruudukko z = new Ruudukko();
         Kayttoliityma kayttoliittyma = new Kayttoliityma(z);
         SwingUtilities.invokeLater(kayttoliittyma);
-        
+
     }
-    
+
 }

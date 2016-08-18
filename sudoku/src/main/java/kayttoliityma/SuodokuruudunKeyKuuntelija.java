@@ -7,31 +7,25 @@ package kayttoliityma;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import sovellusLogiikka.Ruudukko;
-import sovellusLogiikka.Ruutu;
 
 /**
  *
  * @author tiera
  */
-public class SuodokuruudunKeyKuuntelija implements KeyListener{
-    private RuutuButton button;
+public class SuodokuruudunKeyKuuntelija implements KeyListener {
+
+    private final RuutuButton button;
 
     public SuodokuruudunKeyKuuntelija(RuutuButton k) {
         this.button = k;
     }
-
-    
-    
-    
-    
 
     @Override
     public void keyPressed(KeyEvent e) {
         System.out.println(Integer.parseInt(e.getKeyChar() + ""));
         button.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
         button.uusiarvaus();
-        
+
     }
 
     @Override

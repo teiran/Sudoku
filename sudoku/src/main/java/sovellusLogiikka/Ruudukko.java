@@ -26,7 +26,7 @@ public class Ruudukko {
                 ruudukko[i][j] = new RuutuButton(sudokukartat.getValmiskartta()[i][j], sudokukartat.getAloitukartta()[i][j]); //luodaan ruudut
             }
         }
-    }  
+    }
 
     public boolean valmis() {
         for (RuutuButton[] ruutus : ruudukko) {
@@ -39,14 +39,16 @@ public class Ruudukko {
         }
         return false;
     }
+
     //tutkii ja lukistee ruudut jotak on oiken painettaessa Tarkista nappulaa
-    public void tarkista(){
+    public void tarkista() {
         for (RuutuButton[] ruutus : ruudukko) {
             for (RuutuButton ruutu : ruutus) {
                 ruutu.tartkista();
             }
         }
     }
+
     //Ruudukkon graafista käyttöliitymää käytettäsessa tarvittava metodi joka kautta päästään käsiksi Buttomeihen
     public RuutuButton[][] getRuudukko() {
         return ruudukko;

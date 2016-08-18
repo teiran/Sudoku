@@ -12,7 +12,7 @@ import sovellusLogiikka.Ruudukko;
  *
  * @author tiera
  */
-public class TarkistusButton extends JButton{
+public class TarkistusButton extends JButton {
 
     private final Ruudukko taulukko;
 
@@ -20,10 +20,9 @@ public class TarkistusButton extends JButton{
         this.taulukko = taulukko;
         this.setText("Tarkista");
     }
-    
-    public void tarkista(){
+
+    public void tarkista() {
         taulukko.tarkista();
     }
-   
-    
+
 }

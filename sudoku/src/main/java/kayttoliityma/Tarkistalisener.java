@@ -12,21 +12,17 @@ import java.awt.event.ActionListener;
  *
  * @author tiera
  */
-public class Tarkistalisener implements ActionListener{
+public class Tarkistalisener implements ActionListener {
+
     private final TarkistusButton buttom;
 
     public Tarkistalisener(TarkistusButton buttom) {
         this.buttom = buttom;
     }
-    
-    
-    
-    
-  
 
     @Override
     public void actionPerformed(ActionEvent e) {
         buttom.tarkista();
     }
-    
+
 }

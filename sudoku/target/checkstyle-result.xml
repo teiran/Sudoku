@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/sovellusLogiikka/Valmiitkartat.java">
+<error line="6" column="9" severity="error" message="Name &apos;sovellusLogiikka&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/sovellusLogiikka/NewMain.java">
+<error line="6" column="9" severity="error" message="Name &apos;sovellusLogiikka&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/sovellusLogiikka/Ruudukko.java">
+<error line="6" column="9" severity="error" message="Name &apos;sovellusLogiikka&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/sovellusLogiikka/Ruutu.java">
+<error line="6" column="9" severity="error" message="Name &apos;sovellusLogiikka&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/Tarkistalisener.java">
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/SuodokuruudunKeyKuuntelija.java">
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/RuutuButton.java">
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/TarkistusButton.java">
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/Kayttoliityma.java">
+</file>
+<file name="/home/tiera/Desktop/sudoku/Sudoku/sudoku/src/main/java/kayttoliityma/SudokuruudunKuutelija.java">
+</file>
+</checkstyle>

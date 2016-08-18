@@ -5,7 +5,6 @@
  */
 package sovellusLogiikka;
 
-import kayttoliityma.RuutuButton;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,22 +17,22 @@ import static org.junit.Assert.*;
  * @author tiera
  */
 public class RuudukkoTest {
-    
+
     public RuudukkoTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -50,12 +49,8 @@ public class RuudukkoTest {
         assertEquals(expResult, result);
         instance.tarkista();
         assertEquals(expResult, result);
-        
+
     }
-
-   
-
-    
 
     /**
      * Test of getKorkeus method, of class Ruudukko.
@@ -67,7 +62,7 @@ public class RuudukkoTest {
         int expResult = 9;
         int result = instance.getKorkeus();
         assertEquals(expResult, result);
-        
+
     }
 
     /**
@@ -80,7 +75,7 @@ public class RuudukkoTest {
         int expResult = 9;
         int result = instance.getLeveys();
         assertEquals(expResult, result);
-        
+
     }
-    
+
 }
