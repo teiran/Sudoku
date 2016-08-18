@@ -41,6 +41,7 @@
                     <targetTests>
                         <param>sovellusLogiikka.*</param>
                     </targetTests>
+                    <reportsDirectory>/home/tiera/Desktop/sudoku/Sudoku/dokumentaatio</reportsDirectory>
                 </configuration>
             </plugin>
             <plugin>
