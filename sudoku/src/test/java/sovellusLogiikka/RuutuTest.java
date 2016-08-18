@@ -43,19 +43,39 @@ public class RuutuTest {
     @Test
     public void testSetArvaus() {
         System.out.println("setArvaus");
-        Ruutu k = new Ruutu(1);
-        k.setArvaus(3);
-        assertEquals(3, k.getArvaus());
-        k.setArvaus(1);
-        assertEquals(1, k.getArvaus());
-        k.setArvaus(9);
-        assertEquals(9, k.getArvaus());
-        k.setArvaus(10);
-        assertEquals(9, k.getArvaus());
-        k.setArvaus(-1);
-        assertEquals(9, k.getArvaus());
-        k.setArvaus(0);
-        assertEquals(9, k.getArvaus());
+        Ruutu r = new Ruutu(1, 9);
+        r.setArvaus(1);
+        assertEquals(1, r.getArvaus());
+        r.setArvaus(9);
+        assertEquals(9, r.getArvaus());
+        r.setArvaus(-10);
+        assertEquals(9, r.getArvaus());
+        r.setArvaus(16);
+        assertEquals(9, r.getArvaus());
+        r.setArvaus(0);
+        assertEquals(9, r.getArvaus());
+        r.setArvaus(10);
+        assertEquals(9, r.getArvaus());
+    }
+
+    /**
+     * Test of getArvaus method, of class Ruutu.
+     */
+    @Test
+    public void testGetArvaus() {
+        System.out.println("getArvaus");
+        Ruutu r = new Ruutu(7, 5);
+        assertEquals(5, r.getArvaus());
+    }
+
+    /**
+     * Test of getRatkaisu method, of class Ruutu.
+     */
+    @Test
+    public void testGetRatkaisu() {
+        System.out.println("getRatkaisu");
+        Ruutu r = new Ruutu(7, 5);
+        assertEquals(7, r.getRatkaisu());
     }
 
     /**
@@ -64,11 +84,10 @@ public class RuutuTest {
     @Test
     public void testTarkista() {
         System.out.println("tarkista");
-        Ruutu k = new Ruutu(1);
-        k.setArvaus(3);
-        assertEquals(false, k.tarkista());
-        k.setArvaus(1);
-        assertEquals(true, k.tarkista());
+        Ruutu r = new Ruutu(6, 6);
+        assertEquals(true, r.tarkista());
+        r.setArvaus(4);
+        assertEquals(false, r.tarkista());
     }
     
 }
