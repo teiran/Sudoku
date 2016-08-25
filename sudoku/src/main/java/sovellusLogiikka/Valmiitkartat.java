@@ -5,14 +5,16 @@
  */
 package sovellusLogiikka;
 
+import sudokunGeneroiti.SudokuKarttaGenerointi;
+
 /**
  *
  * @author tiera
  */
 public class Valmiitkartat {
 
-    private final int[][] valmiskartta;
-    private final int[][] aloitukartta;
+    private int[][] valmiskartta;
+    private int[][] aloitukartta;
 
     public Valmiitkartat() {
         valmiskartta = new int[9][9];
@@ -29,7 +31,7 @@ public class Valmiitkartat {
         }
 
         kartta1();
-
+        
     }
 
     public int[][] getValmiskartta() {

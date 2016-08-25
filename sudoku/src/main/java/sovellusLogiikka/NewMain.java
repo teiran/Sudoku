@@ -7,6 +7,7 @@ package sovellusLogiikka;
 
 import javax.swing.SwingUtilities;
 import kayttoliityma.Kayttoliityma;
+import sudokunGeneroiti.SudokuKarttaGenerointi;
 
 /**
  *
@@ -18,6 +19,7 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         Ruudukko z = new Ruudukko();
         Kayttoliityma kayttoliittyma = new Kayttoliityma(z);
         SwingUtilities.invokeLater(kayttoliittyma);

@@ -1,10 +1,14 @@
+sudokunGeneroiti/SudokuKarttaGenerointi.class
+sudokunGeneroiti/RuutuGeneroiti.class
+sovellusLogiikka/Ruutu.class
+kayttoliityma/SuodokuruudunKeyKuuntelija.class
+kayttoliityma/RuutuButton.class
 kayttoliityma/SudokuruudunKuutelija.class
 sovellusLogiikka/NewMain.class
 kayttoliityma/Tarkistalisener.class
+sudokunGeneroiti/Ruutu.class
 kayttoliityma/Kayttoliityma.class
 kayttoliityma/TarkistusButton.class
-sovellusLogiikka/Ruutu.class
+sudokunGeneroiti/SudokuKartta.class
 sovellusLogiikka/Valmiitkartat.class
 sovellusLogiikka/Ruudukko.class
-kayttoliityma/SuodokuruudunKeyKuuntelija.class
-kayttoliityma/RuutuButton.class
