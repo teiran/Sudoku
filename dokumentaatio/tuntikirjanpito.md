@@ -8,4 +8,5 @@ Päivä | Tunnit | Kuvaus
 10.08.2016 | 3h | Grafiikan suunnittelua ja aloittamista
 11.08.2016 | 6h | Grafiikan perjaatteessa toimivasksi saattamista
 18.08.2016 | 7h | grafiikan eteen päin, testejä ja koodin selkeyden parantamista
+25.08.2016 | 10h | tein sudokun generointia jota en saanut vielä valmiiksi
 ... | ... | ...
