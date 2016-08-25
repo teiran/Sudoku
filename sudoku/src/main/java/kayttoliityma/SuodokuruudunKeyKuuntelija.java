@@ -22,7 +22,6 @@ public class SuodokuruudunKeyKuuntelija implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println(Integer.parseInt(e.getKeyChar() + ""));
         button.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
         button.uusiarvaus();
 
