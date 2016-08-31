@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sovellusLogiikka;
+package sudokunGeneroiti;
 
-import sudokunGeneroiti.SudokuKarttaGenerointi;
+
+
+
 
 /**
  *
@@ -20,17 +22,18 @@ public class Valmiitkartat {
         valmiskartta = new int[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                valmiskartta[i][j] = 10;
+                valmiskartta[i][j] = 0;
             }
         }
         aloitukartta = new int[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                aloitukartta[i][j] = 10;
+                aloitukartta[i][j] = 0;
             }
         }
 
         kartta1();
+        
         
     }
 

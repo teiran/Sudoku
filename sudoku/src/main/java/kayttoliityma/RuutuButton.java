@@ -30,6 +30,13 @@ public class RuutuButton extends JButton {
         }
 
     }
+    
+    public boolean isArvaus() {
+        if (aktiivisuus) {
+           return ruutu.getArvaus() != 10;
+        }
+        return true;
+    }
 
     public boolean getTarkistetu() {
         return tarkistettu;

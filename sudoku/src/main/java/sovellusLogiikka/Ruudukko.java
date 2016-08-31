@@ -16,10 +16,10 @@ public class Ruudukko {
     private final RuutuButton[][] ruudukko;
     private final int leveys = 9;
     private final int korkeus = 9;
-    private final Valmiitkartat sudokukartat;
+    private final Kartat sudokukartat;
 
     public Ruudukko() {
-        sudokukartat = new Valmiitkartat();
+        sudokukartat = new Kartat();
         ruudukko = new RuutuButton[leveys][korkeus];
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
@@ -39,9 +39,22 @@ public class Ruudukko {
         }
         return false;
     }
+    private boolean saakotarkistaa(){
+        for (RuutuButton[] ruutuButtons : ruudukko) {
+            for (RuutuButton ruutuButton : ruutuButtons) {
+                if (!ruutuButton.isArvaus()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     //tutkii ja lukistee ruudut jotak on oiken painettaessa Tarkista nappulaa
     public void tarkista() {
+        if (saakotarkistaa()) {
+            return;
+        }
         for (RuutuButton[] ruutus : ruudukko) {
             for (RuutuButton ruutu : ruutus) {
                 ruutu.tartkista();

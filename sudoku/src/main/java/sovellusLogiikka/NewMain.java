@@ -7,7 +7,6 @@ package sovellusLogiikka;
 
 import javax.swing.SwingUtilities;
 import kayttoliityma.Kayttoliityma;
-import sudokunGeneroiti.SudokuKarttaGenerointi;
 
 /**
  *

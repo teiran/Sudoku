@@ -23,6 +23,7 @@ public class Tarkistalisener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         buttom.tarkista();
+        
     }
 
 }

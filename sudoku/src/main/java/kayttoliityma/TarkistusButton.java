@@ -24,5 +24,6 @@ public class TarkistusButton extends JButton {
     public void tarkista() {
         taulukko.tarkista();
     }
-
+    
+ 
 }
