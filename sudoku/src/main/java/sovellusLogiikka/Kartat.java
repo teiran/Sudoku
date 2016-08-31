@@ -6,6 +6,7 @@
 package sovellusLogiikka;
 
 
+import sudokunGeneroiti.PoistaNumeroita;
 import sudokunGeneroiti.Sudokugene;
 /**
  *
@@ -30,9 +31,9 @@ public class Kartat {
             }
         }
         //Valmiitkartat k = new Valmiitkartat();
-        Sudokugene k = new Sudokugene();
-        aloitukartta = k.getRuudukko();
-        valmiskartta = k.getRuudukko();
+        PoistaNumeroita k = new PoistaNumeroita(40);
+        aloitukartta = k.getAloituskartta();
+        valmiskartta = k.getLopetuskartta();
         
         
     }

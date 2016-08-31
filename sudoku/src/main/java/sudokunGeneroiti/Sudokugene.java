@@ -13,130 +13,57 @@ import java.util.ArrayList;
  */
 public class Sudokugene {
 
-    private int[][] ruudukko;
-    private int xx;
-    private int yy;
+    private int[][] generoitavaruudukko;
+    private int[][] alotusrudukko;
+    private int[][] lopetusruudukko;
 
     public Sudokugene() {
-        ruudukko = new int[9][9];
-        Vaikeasudoku k = new Vaikeasudoku();
+        generoitavaruudukko = new int[9][9];
+        alotusrudukko = new int[9][9];
+        ;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                ruudukko[i][j] = k.getAloitukartta()[i][j];
+                generoitavaruudukko[i][j] = 0;
+                alotusrudukko[i][j] = 0;
             }
         }
-        xx = 0;
-        yy = 0;
-        boolean y = bactrack(xx, yy);
-        while (!y) {
-            if (xx == 8) {
-                if (yy == 8) {
-                    System.out.println("ei voi ratkaista");
-                    break;
-                }
-                xx = 0;
-                yy += 1;
-            } else {
-                xx++;
-            }
-            y = bactrack(xx, yy);
+        
+        
+        boolean y = bactrack(0, 0);
+        lopetusruudukko = generoitavaruudukko;
+        if (!y) {
+            System.out.println("ei tarkaistavissa");
         }
-
+        
     }
-
-    public void arvouusiSudoku() {
-        ruudukko = new int[9][9];
-        Vaikeasudoku k = new Vaikeasudoku();
+    public boolean voikoratkaista(int[][] valmis, int[][] kokeilu){
+        generoitavaruudukko = kokeilu;
+        boolean y = backtarckfaslse(0, 0);
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                ruudukko[i][j] = k.getAloitukartta()[i][j];
-            }
-        }
-        xx = 0;
-        yy = 0;
-        boolean y = bactrack2(xx, yy);
-        while (!y) {
-            if (xx == 8) {
-                if (yy == 8) {
-                    System.out.println("ei voi ratkaista");
-                    break;
+                if (generoitavaruudukko[i][j] != valmis[i][j]) {
+                    return false;
                 }
-                xx = 0;
-                yy += 1;
-            } else {
-                xx++;
             }
-            y = bactrack2(xx, yy);
         }
-    }
-
-    private boolean bactrack2(int x, int y) {
-        int x2;
-        int y2;
-        if (x == 8 && y == 8) {
-            if (xx == 0 && yy == 0) {
-                ArrayList<Integer> numerot = onkoRuutuoiken(x, y);
-                int t = numerot.remove(((int) (Math.random() * numerot.size())));
-                ruudukko[x][y] = t;
-                return true;
-            } else {
-                x2 = 0;
-                y2 = 0;
-            }
-        } else if (y == 8) {
-            x2 = x + 1;
-            y2 = 0;
-        } else {
-            x2 = x;
-            y2 = y + 1;
-        }
-        if (ruudukko[x][y] == 0) {
-            ArrayList<Integer> numerot = onkoRuutuoiken(x, y);
-            if (!numerot.isEmpty()) {
-                int t = numerot.remove(((int) (Math.random() * numerot.size())));
-                ruudukko[x][y] = t;
-                boolean ta = bactrack2(x2, y2);
-                while (!ta) {
-                    if (!numerot.isEmpty()) {
-                        t = numerot.remove(((int) (Math.random() * numerot.size())));
-                        ruudukko[x][y] = t;
-                        ta = bactrack2(x2, y2);
-                    } else {
-                        ruudukko[x][y] = 0;
-                        return false;
-                    }
-                }
-            } else {
-                ruudukko[x][y] = 0;
-                return false;
-            }
-            return true;
-        } else {
-            return bactrack2(x2, y2);
-        }
-
+        return y;
     }
 
     private boolean bactrack(int x, int y) {
         int x2;
         int y2;
         if (x == 8 && y == 8) {
-            if (xx == 0 && yy == 0) {
-                if (ruudukko[8][8] != 0) {
-                    return true;
-                }
-                ArrayList<Integer> numerot = onkoRuutuoiken(x, y);
-                if (numerot.isEmpty()) {
-                    ruudukko[x][y] = 0;
-                    return false;
-                }
-                int t = numerot.remove(0);
-                ruudukko[x][y] = t;
+            if (generoitavaruudukko[8][8] != 0) {
                 return true;
-            } else {
-                x2 = 0;
-                y2 = 0;
             }
+            ArrayList<Integer> numerot = onkoRuutuoiken(x, y);
+            if (numerot.isEmpty()) {
+                return backtarckfaslse(x, y);
+            }
+            int t = numerot.remove(((int) (Math.random() * numerot.size())));
+            generoitavaruudukko[x][y] = t;
+            return true;
+
         } else if (y == 8) {
             x2 = x + 1;
             y2 = 0;
@@ -144,25 +71,24 @@ public class Sudokugene {
             x2 = x;
             y2 = y + 1;
         }
-        if (ruudukko[x][y] == 0) {
+        if (generoitavaruudukko[x][y] == 0) {
             ArrayList<Integer> numerot = onkoRuutuoiken(x, y);
             if (!numerot.isEmpty()) {
-                int t = numerot.remove(0);
-                ruudukko[x][y] = t;
+                int t = numerot.remove(((int) (Math.random() * numerot.size())));
+                generoitavaruudukko[x][y] = t;
                 boolean ta = bactrack(x2, y2);
                 while (!ta) {
+                    generoitavaruudukko[x][y] = 0;
                     if (!numerot.isEmpty()) {
-                        t = numerot.remove(0);
-                        ruudukko[x][y] = t;
+                        t = numerot.remove(((int) (Math.random() * numerot.size())));
+                        generoitavaruudukko[x][y] = t;
                         ta = bactrack(x2, y2);
                     } else {
-                        ruudukko[x][y] = 0;
-                        return false;
+                        return backtarckfaslse(x, y);
                     }
                 }
             } else {
-                ruudukko[x][y] = 0;
-                return false;
+                return backtarckfaslse(x, y);
             }
             return true;
         } else {
@@ -171,12 +97,17 @@ public class Sudokugene {
 
     }
 
+    private boolean backtarckfaslse(int x, int y) {
+        generoitavaruudukko[x][y] = 0;
+        return false;
+    }
+
     private ArrayList<Integer> onkoRuutu(int a, int b) {
         ArrayList<Integer> numerot = new ArrayList<>();
         for (int j = a; j < a + 3; j++) {
             for (int k = b; k < b + 3; k++) {
-                if (ruudukko[j][k] != 0) {
-                    numerot.add(ruudukko[j][k]);
+                if (generoitavaruudukko[j][k] != 0) {
+                    numerot.add(generoitavaruudukko[j][k]);
                 }
 
             }
@@ -212,13 +143,13 @@ public class Sudokugene {
             }
         }
         for (int j = 0; j < 9; j++) {
-            if (ruudukko[x][j] != 0) {
-                numerot.add(ruudukko[x][j]);
+            if (generoitavaruudukko[x][j] != 0) {
+                numerot.add(generoitavaruudukko[x][j]);
             }
         }
         for (int j = 0; j < 9; j++) {
-            if (ruudukko[j][y] != 0) {
-                numerot.add(ruudukko[j][y]);
+            if (generoitavaruudukko[j][y] != 0) {
+                numerot.add(generoitavaruudukko[j][y]);
             }
         }
         ArrayList<Integer> numerot2 = new ArrayList<>();
@@ -238,8 +169,16 @@ public class Sudokugene {
 
     }
 
-    public int[][] getRuudukko() {
-        return ruudukko;
+    public int[][] getAlotusrudukko() {
+        return alotusrudukko;
     }
 
+    public int[][] getGeneroitavaruudukko() {
+        return generoitavaruudukko;
+    }
+
+    public int[][] getLopetusruudukko() {
+        return lopetusruudukko;
+    }
+    
 }
