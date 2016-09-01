@@ -15,11 +15,18 @@ import java.awt.event.ActionListener;
 public class Tarkistalisener implements ActionListener {
 
     private final TarkistusButton buttom;
-
+    /**
+     * takistus nappulankuuntelija
+     * 
+     * @param buttom TarkistusButton linkki kuunteltavaan nappulaan
+     */
     public Tarkistalisener(TarkistusButton buttom) {
         this.buttom = buttom;
     }
-
+    /**
+     * 
+     * @param e ActionEvent sattuessa kustuu metodia tarkista
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         buttom.tarkista();

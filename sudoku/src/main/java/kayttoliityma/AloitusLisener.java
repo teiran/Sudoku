@@ -1,40 +1,46 @@
 package kayttoliityma;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author tiera
  */
-public class SudokuruudunKuutelija implements ActionListener {
-
-    private final RuutuButton t;
+public class AloitusLisener implements ActionListener {
+    private Aloitusnappula k;
     
     /**
      * 
-     * @param t RuutuButton kuuntelija Ruutubuttonille
+     * @param k on linkki nappulaan Aloitusnappula 
      */
-
-    public SudokuruudunKuutelija(RuutuButton t) {
-        this.t = t;
+    public AloitusLisener(Aloitusnappula k) {
+        this.k = k;
     }
     
     /**
-     * ruutua klikattaessa muuttaa ruudun aktiivisuus arvon falseksi (RuutuButtonin arvon)
+     * actionPerformed on millä kutsua aloitusnappulan setsudoku
      * 
-     * @param e ActionEvent
+     * @param e on ActionEvent 
      */
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        t.setAktiivisuusToFalse();
-
+        if (true) {
+            k.setsudoku();
+        }
     }
 
+    
+    
+  
+    
 }

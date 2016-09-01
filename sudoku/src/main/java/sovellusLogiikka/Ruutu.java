@@ -15,50 +15,47 @@ public class Ruutu {
     private final int ratkaisu;
     private int arvaus;
     boolean aktiivisuus;
-
+    /**
+     * 
+     * @param rat int sudokuruudun ratkaisu
+     * @param arc int sudokuruudun arvaus
+     */
     public Ruutu(int rat, int arc) { //täytyy vielä kehittää sopiva errori jos rat ei ole 1-9 välillä
         arvaus = arc;
         ratkaisu = rat;
         aktiivisuus = false;
 
     }
-    /*
-     * arvausta muutaessa tarvittava setArvaus
+    /**
      * 
-     * @param arvaus on Ruutubuttonnin kautta lisnerista tuleva arvo
-    */
-    //
+     * @param arvaus int muuttaa arvausta jos arvaus sudokun ruudun arvauksen rajoissa
+     */
     public void setArvaus(int arvaus) {
         if (0 < arvaus && 10 > arvaus) {
             this.arvaus = arvaus;
         }
     }
-    /*
-     * getArvausbuttom saa ruudun sisältämän tiedon
+    /**
      * 
-     * @return palauttaa Arvatun arvon buttonille
-    */
-    //
+     * @return int palauttaa arvauksen 
+     */
     public int getArvaus() {
         return arvaus;
     }
     
-    /*
-     * getRatkaisulla buttom saa ruudun sisältämän tiedon
-     *
-     *@return palauttaa sudokuruudun ratkasun
-    */
+    /**
+     * 
+     * @return int palauttaa ratkaisun 
+     */
 
     public int getRatkaisu() {
         return ratkaisu;
     }
     
-    /*
-     * tarkistaessa käytettävä
-     *
-     * @return palauttaa true jos arvaus ja ratkaisu on sama
-    */
-    //
+    /**
+     * 
+     * @return boolean palauttaa onkoruutu oiken, true jos arvaus ja ratkaisu on sama, muuten false 
+     */
     public boolean tarkista() {
         return (arvaus == ratkaisu);
     }

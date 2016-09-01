@@ -38,17 +38,20 @@ public class RuudukkoTest {
     }
 
     /**
-     * Test of valmis method, of class Ruudukko.
+     * testaa onko ruudukko valmis 5 erilaisella sudokulla mahdollisilla arvoilla (ei koskaan valmis)
      */
     @Test
     public void testValmis() {
         System.out.println("valmis");
         Ruudukko instance = new Ruudukko();
-        boolean expResult = true;
-        boolean result = instance.valmis();
-        assertEquals(expResult, result);
-        instance.tarkista();
-        assertEquals(expResult, result);
+        for (int i = 0; i < 5; i++) {
+            instance.setSudoku(0);
+            boolean expResult = true;
+            boolean result = instance.valmis();
+            assertEquals(expResult, result);
+            instance.tarkista();
+            assertEquals(expResult, result);
+        }
 
     }
 
@@ -59,9 +62,13 @@ public class RuudukkoTest {
     public void testGetKorkeus() {
         System.out.println("getKorkeus");
         Ruudukko instance = new Ruudukko();
-        int expResult = 9;
-        int result = instance.getKorkeus();
-        assertEquals(expResult, result);
+        instance.setSudoku(0);
+        for (int i = 0; i < 5; i++) {
+            instance.setSudoku(i);
+            int expResult = 9;
+            int result = instance.getKorkeus();
+            assertEquals(expResult, result);
+        }
 
     }
 
@@ -72,9 +79,12 @@ public class RuudukkoTest {
     public void testGetLeveys() {
         System.out.println("getLeveys");
         Ruudukko instance = new Ruudukko();
-        int expResult = 9;
-        int result = instance.getLeveys();
-        assertEquals(expResult, result);
+        for (int i = 0; i < 10; i++) {
+            instance.setSudoku(i);
+            int expResult = 9;
+            int result = instance.getLeveys();
+            assertEquals(expResult, result);
+        }
 
     }
 

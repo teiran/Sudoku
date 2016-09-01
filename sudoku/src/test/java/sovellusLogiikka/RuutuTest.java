@@ -38,7 +38,7 @@ public class RuutuTest {
     }
 
     /**
-     * Test of setArvaus method, of class Ruutu.
+     * testaa onko ruudukko toimiiko setArvaus oiken, testaa sen ylä ja alarajat ja joitanin arvoja keskskeltä
      */
     @Test
     public void testSetArvaus() {
@@ -59,7 +59,7 @@ public class RuutuTest {
     }
 
     /**
-     * Test of getArvaus method, of class Ruutu.
+     * testaa toimiiko getArvaus oiken
      */
     @Test
     public void testGetArvaus() {
@@ -69,7 +69,7 @@ public class RuutuTest {
     }
 
     /**
-     * Test of getRatkaisu method, of class Ruutu.
+     * testaa toimiiko get tarkaisu oiken
      */
     @Test
     public void testGetRatkaisu() {
@@ -79,7 +79,7 @@ public class RuutuTest {
     }
 
     /**
-     * Test of tarkista method, of class Ruutu.
+     * testaa toimiiko tarkista oiken
      */
     @Test
     public void testTarkista() {

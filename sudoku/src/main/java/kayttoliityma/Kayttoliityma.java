@@ -21,10 +21,20 @@ public class Kayttoliityma implements Runnable {
     private JFrame frame;
     private final Ruudukko taulukko;
     private TarkistusButton tarkista;
+    private Aloitusnappula[] nappulat;
 
+    /**
+     * 
+     * @param r Ruudukko joka on tavallaa varasto ruuduille ja tapa kutsua näitä
+     */
+    
     public Kayttoliityma(Ruudukko r) {
         this.taulukko = r;
     }
+    
+    /**
+     * luograffisen käyttöliitymän
+     */
 
     @Override
     public void run() {
@@ -39,6 +49,12 @@ public class Kayttoliityma implements Runnable {
         frame.setVisible(true);
 
     }
+    
+    /**
+     * on mukana luomassa grafista käyttöliitymää
+     * 
+     * @param container 
+     */
 
     private void luokomponentti(Container container) {
         frame.setLayout(new GridLayout(10, 10));
@@ -56,6 +72,12 @@ public class Kayttoliityma implements Runnable {
         tarkista = new TarkistusButton(taulukko);
         tarkista.addActionListener(new Tarkistalisener(tarkista));
         container.add(tarkista);
+        nappulat = new Aloitusnappula[5];
+        for (int i = 0; i < 5; i++) {
+            nappulat[i] = new Aloitusnappula(taulukko, i);
+            nappulat[i].addActionListener(new AloitusLisener(nappulat[i]));
+            container.add(nappulat[i]);
+        }
 
     }
 

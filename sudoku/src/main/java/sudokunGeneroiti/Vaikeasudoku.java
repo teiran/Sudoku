@@ -12,7 +12,11 @@ package sudokunGeneroiti;
 public class Vaikeasudoku {
 
     private int[][] aloitukartta;
-
+    /**
+     * toimii tieto varastona muutamalle sudoku variaationa
+     * 
+     * @param k int joka kertoo millaisen ruudukon haluaa palautta
+     */
     public Vaikeasudoku(int k) {
         aloitukartta = new int[9][9];
         for (int i = 0; i < 9; i++) {
@@ -21,133 +25,117 @@ public class Vaikeasudoku {
             }
         }
         if (k == 1) {
-            kartta1();
-        } if (k == 2) {
+            kartta3();
+        }
+        if (k == 2) {
             kartta2();
         } else {
-           kartta3();
+            kartta1();
         }
-        
-    }
 
+    }
+    /**
+     * 
+     * @return palauttaa varastoidun ruudukon 
+     */
     public int[][] getAloitukartta() {
         return aloitukartta;
     }
-
+    /**
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * 
+     * @param t
+     * @param y
+     * @param x 
+     */
     private void lisaanumeroa(int t, int y, int x) {
         aloitukartta[x][y] = t;
     }
-
+    /**
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * 
+     * @param t
+     * @param y
+     * @param x 
+     */
     private void lisaanumero(int t, int y, int x) {
         lisaanumeroa(t, x, y);
     }
-
+    /**
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * 
+     * @param k 
+     */
     private void lisaa(String k) {
         char[] h = k.toCharArray();
         lisaanumero(Integer.parseInt("" + h[0]), Integer.parseInt("" + h[1]), Integer.parseInt("" + h[2]));
     }
     
-    private void kartta1(){ //http://ristikkotuumin.fi/juh/sudoku/sudoku_21_hyvinvaikea.html
+    private void kartta1() { //http://ristikkotuumin.fi/juh/sudoku/sudoku_21_hyvinvaikea.html
         lisaa("100");
         lisaa("404");
         lisaa("308");
-        
+
         lisaa("413");
         lisaa("517");
-        
+
         lisaa("622");
         lisaa("726");
-        
+
         lisaa("331");
         lisaa("835");
-        
+
         lisaa("540");
         lisaa("344");
         lisaa("248");
-        
+
         lisaa("753");
         lisaa("657");
-        
+
         lisaa("462");
         lisaa("866");
-        
+
         lisaa("971");
         lisaa("175");
-        
+
         lisaa("680");
         lisaa("584");
         lisaa("988");
-        
+
     }
-    
-    private void kartta2222(){ // http://www.7sudoku.com/very-difficult sudoku väärin
-        lisaa("502");
-        lisaa("204");
-        
-        lisaa("810");
-        lisaa("715");
-        lisaa("416");
-        lisaa("118");
-        
-        lisaa("621");
-        lisaa("527");
-        
-        lisaa("131");
-        lisaa("934");
-        
-        lisaa("741");
-        lisaa("843");
-        lisaa("345");
-        lisaa("647");
-        
-        lisaa("754");
-        lisaa("457");
-        
-        lisaa("561");
-        lisaa("867");
-        
-        lisaa("470");
-        lisaa("272");
-        lisaa("973");
-        lisaa("378");
-        
-        lisaa("384");
-        lisaa("286");
-        
-    }
-    
-    private void kartta2(){ //http://www.telegraph.co.uk/news/science/science-news/9359579/Worlds-hardest-sudoku-can-you-crack-it.html
+
+    private void kartta2() { //http://www.telegraph.co.uk/news/science/science-news/9359579/Worlds-hardest-sudoku-can-you-crack-it.html
         lisaa("800");
-        
+
         lisaa("312");
         lisaa("613");
-        
+
         lisaa("721");
         lisaa("924");
         lisaa("226");
-        
+
         lisaa("531");
         lisaa("735");
         lisaa("444");
         lisaa("545");
         lisaa("746");
-        
+
         lisaa("153");
         lisaa("357");
-        
+
         lisaa("162");
         lisaa("667");
         lisaa("868");
-        
+
         lisaa("872");
         lisaa("573");
         lisaa("177");
-        
+
         lisaa("981");
         lisaa("486");
     }
-    
-     private void kartta3() { //https://en.wikipedia.org/wiki/Sudoku#/media/File:Sudoku-by-L2G-20050714_solution.svg
+
+    private void kartta3() { //https://en.wikipedia.org/wiki/Sudoku#/media/File:Sudoku-by-L2G-20050714_solution.svg
         lisaanumero(5, 0, 0);
         lisaanumero(3, 1, 0);
         lisaanumero(4, 2, 0);
@@ -237,6 +225,42 @@ public class Vaikeasudoku {
         lisaa("168f");
         lisaa("778t");
         lisaa("988t");
+
+    }
+
+    private void kartta2222() { // http://www.7sudoku.com/very-difficult sudoku väärin
+        lisaa("502");
+        lisaa("204");
+
+        lisaa("810");
+        lisaa("715");
+        lisaa("416");
+        lisaa("118");
+
+        lisaa("621");
+        lisaa("527");
+
+        lisaa("131");
+        lisaa("934");
+
+        lisaa("741");
+        lisaa("843");
+        lisaa("345");
+        lisaa("647");
+
+        lisaa("754");
+        lisaa("457");
+
+        lisaa("561");
+        lisaa("867");
+
+        lisaa("470");
+        lisaa("272");
+        lisaa("973");
+        lisaa("378");
+
+        lisaa("384");
+        lisaa("286");
 
     }
 }

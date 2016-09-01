@@ -14,11 +14,25 @@ import sovellusLogiikka.Ruutu;
  */
 public class RuutuButton extends JButton {
 
-    private final Ruutu ruutu;
+    private Ruutu ruutu;
     private boolean tarkistettu; //mahdollistaa oikein olevian ruutujen lukitsemisen
     private boolean aktiivisuus; //mahdollistaa oikean ruudun hiirellä valitsemisen
-
-    public RuutuButton(int rat, int arvaus) {
+    private boolean onkoasetettusudoku;
+    /**
+     * on graafinen asu ruudulle on myös sovelluslogiikan ominaisuuksia
+     */
+    public RuutuButton() {
+        this.setText("");
+        onkoasetettusudoku = false;
+    }
+    /**
+     * laittaa ruutuihin sudokun mukaiset numerot luo myös Ruutu olion jossa osa 
+     * sovelluslogiikan tiedoista
+     * 
+     * @param rat int ratkaisu ruudulle
+     * @param arvaus int arvaus ruudulle
+     */
+    public void setsudoku(int rat, int arvaus) {
         this.ruutu = new Ruutu(rat, arvaus);
         aktiivisuus = false;
         if (ruutu.tarkista()) {
@@ -28,61 +42,103 @@ public class RuutuButton extends JButton {
             this.setText("");
             tarkistettu = false;
         }
-
+        onkoasetettusudoku = true;
     }
-    
+    /**
+     * tarkistaa arvaujsen
+     * 
+     * @return boolean palauttaa true jos on arvaus false jos ei ole
+     */
     public boolean isArvaus() {
-        if (aktiivisuus) {
-           return ruutu.getArvaus() != 10;
+        if (onkoasetettusudoku) {
+            if (aktiivisuus) {
+                return ruutu.getArvaus() != 10;
+            }
+            return true;
         }
-        return true;
-    }
+        return false;
 
+    }
+    /**
+     * tutkii onko ruutu tarkistettu
+     * 
+     * @return boolean true jos ruutu on merkattu tarkistetuksi (ja siis oiken) ja false jos ei 
+     */
     public boolean getTarkistetu() {
-        return tarkistettu;
+        if (onkoasetettusudoku) {
+            return tarkistettu;
+        }
+        return false;
     }
-
-    //SudokuruudunKeyKuuntelijan käyttämä metodi joka mahdollistaa ruudun arvon muutamisen
+    /**
+     * SudokuruudunKeyKuuntelijan käyttämä metodi joka mahdollistaa ruudun arvon muutamisen
+     * 
+     * @param i int muokkaa ruudun arvausta jos sitä voi
+     */
+    //
     public void muutaarvausta(int i) {
-        if (!tarkistettu) {
+        if (!tarkistettu && onkoasetettusudoku) {
             ruutu.setArvaus(i);
         }
 
     }
-
-    //oikean Ruudun hiirellä löytämiseen tarvittava arvo (Ruudukko käyttää)
+    /**
+     * jos ruutu on valittu hiirellä sen arvo on true ja jos ei niin false
+     * jos ruudun arvo on true siihen voi kirjottaa numeron.
+     * 
+     * @return boolean true jos ruutu on aktiivinen false jos ei
+     */
     public boolean getAktiivisuus() {
-        return aktiivisuus;
+        if (onkoasetettusudoku) {
+            return aktiivisuus;
+        }
+        return false;
     }
-
-    //onko ruudun numero oiken tutkiva metodi
+    /**
+     * tarkistaa onko ruutu tarkistettu
+     * 
+     */
+    
     public void tartkista() {
-        if (ruutu.tarkista()) {
-            this.setText("" + ruutu.getRatkaisu());
-            tarkistettu = true;
-        } else {
-            this.setText("");
-            tarkistettu = false;
+        if (onkoasetettusudoku) {
+            if (ruutu.tarkista()) {
+                this.setText("" + ruutu.getRatkaisu());
+                tarkistettu = true;
+            } else {
+                this.setText("");
+                tarkistettu = false;
+            }
         }
-    }
 
-    //ruudun saadessa uuden arvauksen se tapahtuu tämän kautta
+    }
+    /**
+     * ruudun saadessa uuden arvauksen tämä muokka ruudun graafiikka sen mukaiseksi
+     * 
+     */
+    
     public void uusiarvaus() {
-        if (ruutu.tarkista()) {
-            this.setText("" + ruutu.getRatkaisu());
-            tarkistettu = true;
-        } else if (ruutu.getArvaus() != 10) {
-            this.setText("" + ruutu.getArvaus());
-            tarkistettu = false;
-        } else {
-            this.setText("");
-            tarkistettu = false;
+        if (onkoasetettusudoku) {
+            if (ruutu.tarkista()) {
+                this.setText("" + ruutu.getRatkaisu());
+                tarkistettu = true;
+            } else if (ruutu.getArvaus() != 10) {
+                this.setText("" + ruutu.getArvaus());
+                tarkistettu = false;
+            } else {
+                this.setText("");
+                tarkistettu = false;
+            }
         }
-    }
 
-    //mahdollistaa oikean ruudun valitsemisen (muiden lukitsemisen) hiirellä
+    }
+    /**
+     * muuttaa ruudun aktivisuuden falseksi
+     * 
+     */
     public void setAktiivisuusToFalse() {
-        aktiivisuus = false;
+        if (onkoasetettusudoku) {
+            aktiivisuus = false;
+        }
     }
 
 }

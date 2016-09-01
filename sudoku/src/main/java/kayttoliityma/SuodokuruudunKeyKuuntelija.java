@@ -15,11 +15,17 @@ import java.awt.event.KeyListener;
 public class SuodokuruudunKeyKuuntelija implements KeyListener {
 
     private final RuutuButton button;
-
+    /**
+     * kuutenlee ruutuun kirjotettavat arvot
+     * @param k RuutuButton linkki kuunteltavaan ruutuun
+     */
     public SuodokuruudunKeyKuuntelija(RuutuButton k) {
         this.button = k;
     }
-
+    /**
+     * 
+     * @param e KeyEvent jonka sattuessa kirjotat ruutuun 
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         button.muutaarvausta(Integer.parseInt(e.getKeyChar() + ""));
