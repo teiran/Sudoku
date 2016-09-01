@@ -1,1 +1,1 @@
-asdasda
+Chekinsylessä en vain saanut mistään selvyyttä mitä tarkottaa "JavadocStyle	Javadoc has empty description section" joiten en saanut cheking styleä kokonaan oiken. Tämän lisäksi chekingstyle sanoo että swits chacessit ovat väärin sievennettyjä vaikka kaikki muut lähteet väittävätkin toisin. Testaus jäi kannssa vähän puolivaiheeseen, mutta tästä enenmmän testaus dokumentissa.
