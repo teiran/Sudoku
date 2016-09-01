@@ -7,4 +7,5 @@ Tarkoituksena on tehdä sudokupeli jolla pystyy pelaamaan sudokua. Sudokua voi p
 [linkki sivulle josta löytyy pit reportti ja chekingstyle](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/testejaa.md)
 [ongelmia](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/ongelmia.md)
 [testauksesta](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/Testaus.md)
+[käyttöohje](https://github.com/teiran/Sudoku/blob/master/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
 
