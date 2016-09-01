@@ -1,1 +1,8 @@
-dasda
+#testaus
+
+En saanut hirvittävästi testauta aikaiseksi, ongelmia oli siinä että kun sovellus logiiika menee niin limittäin käyttöliitymän ja grafiikan (etenkin Ruudut menevät päälekkain) ja grafiikka on vaike lähteä testaamaan. Lisäksi generointi logiikan kohdalla oli hirvittävän vaikea lähteä testaamaan backtraking algorytmiä joka oli hirvittävän keskeinen osa sitä.
+
+Ruutu tuli hyvin testattua, niin yksin kertainen. Ruudukkoa jäi vähän vähemmälle tetaukselle tämä koska en tajunnut aluksi että jopa ohjelman sisäisiin luokkiin täytyy tehdä kunnollinen testaus (tai lähinnä virhe tilojen estämiseksi jokaiselle arvolle aina rajat heti koodia tehdessä. Pidin kyllä huolen siitä että kaikki luokat palauttaa täsmälleen sen mitä haluan, mutta lopussa huomasin kyllä että siitä jos olisi heti tehnyt rajat jokaiseelle muutavalle arvolle (aina syöttäessä metodiin tai konstruktoriin) niin vähänkää isommassa sovelluksessa se olisi helpottanut hyvin paljon tekemistä.
+
+En siis tetannut Sudokungenerointi paketissa olevia luokkia tai käyttöliitymä paketissa olevia. Sudokungenerointi luokassa osa luokisata olisi voinut olla testattavissa mutta en löytänyt sopivaa koodia sille että olisin rajannut osan pois pomissa. En oo ihan varma miten backtraking algorytmi ei suostunut tettattavaksi, kun laitoin pomista sen testeihin mukaan (tai koko paketin) niin pit testaus rupesi kirjottamaan puolen minuutin välen time out. time out, time out. En ole kuitenkaan ihan varama johtuuko tämä backtraking algorytmitä, mutta veikkaisin että johtuu tästä ja tämän rekurssiivisuudetsa. Ja Graafiikka ei tarvinnut testata, ja kaikki käyttöliitymän alla olevat luokat ovat jollain tavalla sidoksissa grafiikka, eli käyttöliitymä, nappuloita tai liseneritä.
+
