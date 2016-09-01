@@ -16,16 +16,17 @@ public class Tarkistalisener implements ActionListener {
 
     private final TarkistusButton buttom;
     /**
-     * takistus nappulankuuntelija
+     * takistus nappulankuuntelija.
      * 
-     * @param buttom TarkistusButton linkki kuunteltavaan nappulaan
+     * @param buttom TarkistusButton linkki kuunteltavaan nappulaan.
+     * 
      */
     public Tarkistalisener(TarkistusButton buttom) {
         this.buttom = buttom;
     }
     /**
+     * @param e ActionEvent sattuessa kustuu metodia tarkista.
      * 
-     * @param e ActionEvent sattuessa kustuu metodia tarkista
      */
     @Override
     public void actionPerformed(ActionEvent e) {

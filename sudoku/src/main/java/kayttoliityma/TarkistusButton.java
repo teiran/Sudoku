@@ -6,7 +6,7 @@
 package kayttoliityma;
 
 import javax.swing.JButton;
-import sovellusLogiikka.Ruudukko;
+import sovelluslogiikka.Ruudukko;
 
 /**
  *
@@ -16,16 +16,18 @@ public class TarkistusButton extends JButton {
 
     private final Ruudukko taulukko;
     /**
-     * nappula jossa lukee tarkista ja sitä klikasttaessa tarkistaa
+     * nappula jossa lukee tarkista ja sitä klikasttaessa tarkistaa.
      * 
-     * @param taulukko Ruudukko linkki ruudukkoon
+     * @param taulukko Ruudukko linkki ruudukkoon.
+     * 
      */
     public TarkistusButton(Ruudukko taulukko) {
         this.taulukko = taulukko;
         this.setText("Tarkista");
     }
     /**
-     * Tarkistalisenerin käyttämä metdoi jolla sen ActionEventin tapahtuessa tarkistetaan mitkä sudokun arvot oikein
+     * Tarkistalisenerin käyttämä metdoi jolla sen ActionEventin tapahtuessa tarkistetaan mitkä sudokun arvot oikein.
+     * 
      */
     public void tarkista() {
         taulukko.tarkista();

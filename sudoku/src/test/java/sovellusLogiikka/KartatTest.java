@@ -5,7 +5,7 @@
  */
 package sovellusLogiikka;
 
-import sudokunGeneroiti.Kartat;
+import sudokungeneroiti.Kartat;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

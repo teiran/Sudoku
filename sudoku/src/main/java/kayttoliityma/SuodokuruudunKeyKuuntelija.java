@@ -9,22 +9,24 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- *
  * @author tiera
+ * 
  */
 public class SuodokuruudunKeyKuuntelija implements KeyListener {
 
     private final RuutuButton button;
     /**
-     * kuutenlee ruutuun kirjotettavat arvot
-     * @param k RuutuButton linkki kuunteltavaan ruutuun
+     * kuutenlee ruutuun kirjotettavat arvot.
+     * 
+     * @param k RuutuButton linkki kuunteltavaan ruutuun.
+     * 
      */
     public SuodokuruudunKeyKuuntelija(RuutuButton k) {
         this.button = k;
     }
     /**
+     * @param e KeyEvent jonka sattuessa kirjotat ruutuun.
      * 
-     * @param e KeyEvent jonka sattuessa kirjotat ruutuun 
      */
     @Override
     public void keyPressed(KeyEvent e) {

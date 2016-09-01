@@ -17,8 +17,8 @@ public class SudokuruudunKuutelija implements ActionListener {
     private final RuutuButton t;
     
     /**
+     * @param t RuutuButton kuuntelija Ruutubuttonille.
      * 
-     * @param t RuutuButton kuuntelija Ruutubuttonille
      */
 
     public SudokuruudunKuutelija(RuutuButton t) {
@@ -26,9 +26,10 @@ public class SudokuruudunKuutelija implements ActionListener {
     }
     
     /**
-     * ruutua klikattaessa muuttaa ruudun aktiivisuus arvon falseksi (RuutuButtonin arvon)
+     * ruutua klikattaessa muuttaa ruudun aktiivisuus arvon falseksi (RuutuButtonin arvon).
      * 
-     * @param e ActionEvent
+     * @param e ActionEvent.
+     * 
      */
 
     @Override

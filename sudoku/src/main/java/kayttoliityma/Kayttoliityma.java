@@ -10,10 +10,9 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import sovellusLogiikka.Ruudukko;
+import sovelluslogiikka.Ruudukko;
 
 /**
- *
  * @author tiera
  */
 public class Kayttoliityma implements Runnable {
@@ -24,8 +23,7 @@ public class Kayttoliityma implements Runnable {
     private Aloitusnappula[] nappulat;
 
     /**
-     * 
-     * @param r Ruudukko joka on tavallaa varasto ruuduille ja tapa kutsua näitä
+     * @param r Ruudukko joka on tavallaa varasto ruuduille ja tapa kutsua näitä.
      */
     
     public Kayttoliityma(Ruudukko r) {
@@ -33,7 +31,7 @@ public class Kayttoliityma implements Runnable {
     }
     
     /**
-     * luograffisen käyttöliitymän
+     * luograffisen käyttöliitymän.
      */
 
     @Override
@@ -51,8 +49,7 @@ public class Kayttoliityma implements Runnable {
     }
     
     /**
-     * on mukana luomassa grafista käyttöliitymää
-     * 
+     * on mukana luomassa grafista käyttöliitymää.
      * @param container 
      */
 

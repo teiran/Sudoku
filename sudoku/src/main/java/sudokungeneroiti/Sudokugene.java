@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudokunGeneroiti;
+package sudokungeneroiti;
 
 import java.util.ArrayList;
 
@@ -15,9 +15,10 @@ public class Sudokugene {
 
     private int[][] generoitavaruudukko;
     /**
-     * generoi puutuvat numerot joko ratkaistavissa olevasta sudokusta tai täysin tyhjästä
+     * generoi puutuvat numerot joko ratkaistavissa olevasta sudokusta tai täysin tyhjästä.
      * 
-     * @param aloitusnumerot int[][] aloitus ruudukko jos täysin tyhjä (kaikki numerot 0) silloin generoi täysin tyhjästä, voi olla myös ratkaistavissaa oleva sudoku jonka tämä ratkaisee
+     * @param aloitusnumerot int[][] aloitus ruudukko jos täysin tyhjä (kaikki numerot 0) silloin generoi täysin tyhjästä, voi olla myös ratkaistavissaa oleva sudoku jonka tämä ratkaisee.
+     * 
      */
     public Sudokugene(int[][] aloitusnumerot) {
         generoitavaruudukko = new int[9][9];
@@ -32,11 +33,14 @@ public class Sudokugene {
     }
     
     /**
-     * Käyttää backtrack algorytmiä (luin käytännöstä wikikipediasta perus toiminnan) sudokun ratkaisemiseen 
+     * Käyttää backtrack algorytmiä (luin käytännöstä wikikipediasta perus toiminnan) sudokun ratkaisemiseen.
      * 
-     * @param x int aloitus ruutu x-akselilla 
-     * @param y int aloitus ruutu y-akselilla
-     * @return palauttaa true jos tähän ruutuu pystyy sudokun sääntöjen mukaan laittamaan jonkin numeron (kättää rekursiota)
+     * @param x int aloitus ruutu x-akselilla.
+     * 
+     * @param y int aloitus ruutu y-akselilla.
+     * 
+     * @return palauttaa true jos tähän ruutuu pystyy sudokun sääntöjen mukaan laittamaan jonkin numeron (kättää rekursiota).
+     * 
      */
     private boolean backtrack(int x, int y) {
         int x2;
@@ -86,7 +90,7 @@ public class Sudokugene {
 
     }
     /**
-     * jos backtark on väärin käyttää tätä
+     * jos backtark on väärin käyttää tätä.
      * 
      * @param x int
      * @param y int 
@@ -97,11 +101,14 @@ public class Sudokugene {
         return false;
     }
     /**
-     * tutkii x ja y perusteella mitä numeroita johonkin ruutuun voi laittaa, pelkästään ruudun säänöillä
+     * tutkii x ja y perusteella mitä numeroita johonkin ruutuun voi laittaa, pelkästään ruudun säänöillä.
      * 
-     * @param a int 0, 3 tai 6 riipuen siitä mitä 3*3 ruutua tutkitaan
-     * @param b int 0, 3 tai 6 riipuen siitä mitä 3*3 ruutua tutkitaan
-     * @return ArrayList<Integer> palauttaa listana sopivat numerot tähän ruutuun (x,y) on vai yksi ruutu
+     * @param a int 0, 3 tai 6 riipuen siitä mitä 3*3 ruutua tutkitaan.
+     * 
+     * @param b int 0, 3 tai 6 riipuen siitä mitä 3*3 ruutua tutkitaan.
+     * 
+     * @return ArrayList<Integer> palauttaa listana sopivat numerot tähän ruutuun (x,y) on vai yksi ruutu.
+     * 
      */
     private ArrayList<Integer> onkoRuutu(int a, int b) {
         ArrayList<Integer> numerot = new ArrayList<>();
@@ -116,11 +123,11 @@ public class Sudokugene {
         return numerot;
     }
     /**
-     * Tutukii rivin, sarakkeen ja ruudun kautta mitkä ruudut sopii tiettyyn ruutuun
+     * Tutukii rivin, sarakkeen ja ruudun kautta mitkä ruudut sopii tiettyyn ruutuun.
      * 
-     * @param x int paikka ruutu x-akselilla 
-     * @param y int paikka ruutu y-akselilla
-     * @return ArrayList<Integer> palauttaa listana sopivat numerot mitkä sopivat senhetken perusteella siihen ruutuun
+     * @param x int paikka ruutu x-akselilla. 
+     * @param y int paikka ruutu y-akselilla.
+     * @return ArrayList<Integer> palauttaa listana sopivat numerot mitkä sopivat senhetken perusteella siihen ruutuun.
      */
     private ArrayList<Integer> onkoRuutuoiken(int x, int y) {
         ArrayList<Integer> numerot = new ArrayList<>();
@@ -176,8 +183,8 @@ public class Sudokugene {
 
     }
     /**
+     * @return int[][] palauttaa täytetyn sudoku ruudukon.
      * 
-     * @return int[][] palauttaa täytetyn sudoku ruudukon
      */
     public int[][] getGeneroitavaruudukko() {
         return generoitavaruudukko;

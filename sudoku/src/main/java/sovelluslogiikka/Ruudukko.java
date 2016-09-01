@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sovellusLogiikka;
+package sovelluslogiikka;
 
-import sudokunGeneroiti.Kartat;
+import sudokungeneroiti.Kartat;
 import kayttoliityma.RuutuButton;
 
 /**
@@ -20,7 +20,8 @@ public class Ruudukko {
     private Kartat sudokukartat;
     private boolean t;
     /**
-     * luo perus ruudukon  RuutuButton[][] ruudukko jonka ruudut tyhjiä
+     * luo perus ruudukon  RuutuButton[][] ruudukko jonka ruudut tyhjiä.
+     * 
      */
     public Ruudukko() {
         ruudukko = new RuutuButton[leveys][korkeus];
@@ -33,9 +34,10 @@ public class Ruudukko {
     }
 
     /**
-     * kutsuu Kartat(i) ja kopio kartoilta saatavan sudoku kartan itseensä
+     * kutsuu Kartat(i) ja kopio kartoilta saatavan sudoku kartan itseensä.
      * 
-     * @param i int jonka perusteella kartat tietää minkälaisen kartan generoida
+     * @param i int jonka perusteella kartat tietää minkälaisen kartan generoida.
+     * 
      */
     public void setSudoku(int i) {
         sudokukartat = new Kartat(i);
@@ -47,9 +49,10 @@ public class Ruudukko {
         t = true;
     }
     /**
-     * tutkii onko sudoku valmis (ei käytössä mutta tulee olemaan tulevaisuudessa)
+     * tutkii onko sudoku valmis (ei käytössä mutta tulee olemaan tulevaisuudessa).
      * 
-     * @return boolean onko sudokuvalmis
+     * @return boolean onko sudokuvalmis.
+     * 
      */
     public boolean valmis() {
         if (t) {
@@ -67,9 +70,10 @@ public class Ruudukko {
     }
     
     /**
-     * ei käytössä mutta tulevaisuudessa tulee olemaan, tutkii onko koko sudokukartassa kaikissa ruuduissa numero
+     * ei käytössä mutta tulevaisuudessa tulee olemaan, tutkii onko koko sudokukartassa kaikissa ruuduissa numero.
      * 
-     * @return boolean  
+     * @return boolean.
+     * 
      */
 
     private boolean saakotarkistaa() {
@@ -86,9 +90,7 @@ public class Ruudukko {
         return true;
     }
     /**
-     * tutkii ja lukistee ruudut jotak on oiken painettaessa Tarkista nappula
-     * 
-     * 
+     * tutkii ja lukistee ruudut jotak on oiken painettaessa Tarkista nappula. 
      */
     public void tarkista() {
         if (t) {
@@ -104,7 +106,8 @@ public class Ruudukko {
 
     }
     /**
-     * getteru ruudukolle jonka kautta käyttöliitymä pääsee käsiksi ruutuihin
+     * getteru ruudukolle jonka kautta käyttöliitymä pääsee käsiksi ruutuihin.
+     * 
      * @return RuutuButton[][]
      */
     //
@@ -112,16 +115,18 @@ public class Ruudukko {
         return ruudukko;
     }
     /**
-     * tulevaisuutta ajatelle luotu korkeus ja leveys jos tulevaisuudees pystyisi generoimaan myös muita kun 9*9 sudokuja. 
-     * tätä käyttää käyttö liitymä sudokungenerointi logiikka en vielä ulottanut tätä
+     * tulevaisuutta ajatelle luotu korkeus ja leveys jos tulevaisuudees pystyisi generoimaan myös muita kun 9*9 sudokuja 
+     * tätä käyttää käyttö liitymä sudokungenerointi logiikka en vielä ulottanut tätä.
+     * 
      * @return int 9
      */
     public int getKorkeus() {
         return korkeus;
     }
     /**
-     * tulevaisuutta ajatelle luotu korkeus ja leveys jos tulevaisuudees pystyisi generoimaan myös muita kun 9*9 sudokuja. 
-     * tätä käyttää käyttö liitymä sudokungenerointi logiikka en vielä ulottanut tätä
+     * tulevaisuutta ajatelle luotu korkeus ja leveys jos tulevaisuudees pystyisi generoimaan myös muita kun 9*9 sudokuja 
+     * tätä käyttää käyttö liitymä sudokungenerointi logiikka en vielä ulottanut tätä.
+     * 
      * @return int 9
      */
     public int getLeveys() {

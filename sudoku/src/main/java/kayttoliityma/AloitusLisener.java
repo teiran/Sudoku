@@ -3,8 +3,6 @@ package kayttoliityma;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,22 +11,20 @@ import java.awt.event.KeyListener;
  */
 
 /**
- *
  * @author tiera
  */
 public class AloitusLisener implements ActionListener {
     private Aloitusnappula k;
     
     /**
-     * 
-     * @param k on linkki nappulaan Aloitusnappula 
+     * @param k on linkki nappulaan Aloitusnappula. 
      */
     public AloitusLisener(Aloitusnappula k) {
         this.k = k;
     }
     
     /**
-     * actionPerformed on millä kutsua aloitusnappulan setsudoku
+     * actionPerformed on millä kutsua aloitusnappulan setsudoku.
      * 
      * @param e on ActionEvent 
      */

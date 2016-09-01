@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudokunGeneroiti;
+package sudokungeneroiti;
 
 /**
  *
@@ -15,10 +15,14 @@ public class PoistaNumeroita {
     final private int[][] valmiskarratta;
     private int[][] aloituskartta;
     /**
-     * poistaa valmiista sudokuruudukosta jossa kaikki numerot numeroita siten että se pystyy ratkaisemaan
-     * @param i int haluttau määränumeroita joka jää jäljelle aloitus karttan
-     * @param numerot int[][] sudokuruudukko jossa on kaikissa ruuduissa numero (valmis ruudukko ja oiken)
-     * @param e int haluttu maksimi toisto määrä kerta, kun alussa on ratkaistu sudoku (sudokun säänöt pätee numeroissa) ja siitä kun lähdetään postamaan satunnaisesti(tosin nii että se on ratkaistavissa) numeroita niin ei voi koskaan päätyä tasan haluttuu aloitus numeroita varmasti
+     * poistaa valmiista sudokuruudukosta jossa kaikki numerot numeroita siten että se pystyy ratkaisemaan.
+     * 
+     * @param i int haluttau määränumeroita joka jää jäljelle aloitus karttan.
+     * 
+     * @param numerot int[][] sudokuruudukko jossa on kaikissa ruuduissa numero (valmis ruudukko ja oiken).
+     * 
+     * @param e int haluttu maksimi toisto määrä kerta, kun alussa on ratkaistu sudoku (sudokun säänöt pätee numeroissa) ja siitä kun lähdetään postamaan satunnaisesti(tosin nii että se on ratkaistavissa) numeroita niin ei voi koskaan päätyä tasan haluttuu aloitus numeroita varmasti.
+     * 
      */
     public PoistaNumeroita(int i, int[][] numerot, int e) {
         this.i = i;
@@ -40,7 +44,7 @@ public class PoistaNumeroita {
                 x = ((int) (Math.random() * 9));
                 y = ((int) (Math.random() * 9));
             } else {
-                int[][] t= new int[9][9];
+                int[][] t = new int[9][9];
                 for (int j = 0; j < 9; j++) {
                     for (int k = 0; k < 9; k++) {
                         t[j][k] = aloituskartta[j][k];
@@ -53,7 +57,7 @@ public class PoistaNumeroita {
                     numeroidenmaara = laskenumeroidenmaara();
                     voikoenaapoistaanumeroita = 0;
                 } else {
-                   voikoenaapoistaanumeroita++;
+                    voikoenaapoistaanumeroita++;
                 }
                 
                   
@@ -63,12 +67,14 @@ public class PoistaNumeroita {
 
     }
     /**
-     * tutkii voidaanko tästä välivaiheesta päätyä takaikaisin täysiin valmiiseen sudokuun
+     * tutkii voidaanko tästä välivaiheesta päätyä takaikaisin täysiin valmiiseen sudokuun.
      * 
-     * @param t int[][] välivaiheen versio aloitus sudoku kartasta 
-     * @return boolean jos voidaan päätyä takaisin täställeen samaan ratkaistuun sudokuun true, muuten false
+     * @param t int[][] välivaiheen versio aloitus sudoku kartasta.
+     * 
+     * @return boolean jos voidaan päätyä takaisin täställeen samaan ratkaistuun sudokuun true, muuten false.
+     * 
      */
-    private boolean voikoratkaista(int[][] t){
+    private boolean voikoratkaista(int[][] t) {
         int[][]u = new int[9][9];
         for (int j = 0; j < 9; j++) {
             for (int k = 0; k < 9; k++) {
@@ -87,10 +93,10 @@ public class PoistaNumeroita {
         return true;
     }
     /**
+     * @return int välivaiheen sudokussa jäljellä olevien numeroiden määrä.
      * 
-     * @return int välivaiheen sudokussa jäljellä olevien numeroiden määrä 
      */
-    private int laskenumeroidenmaara(){
+    private int laskenumeroidenmaara() {
         int y = 0;
         for (int j = 0; j < 9; j++) {
             for (int k = 0; k < 9; k++) {
@@ -102,15 +108,15 @@ public class PoistaNumeroita {
         return y;
     }
     /**
+     * @return int[][] palauttaa ratkaistavissa olevan sudonkun.
      * 
-     * @return int[][] palauttaa ratkaistavissa olevan sudonkun
      */
     public int[][] getAloituskartta() {
         return aloituskartta;
     }
     /**
+     * @return palautta täysin valmiin sudonkun.
      * 
-     * @return palautta täysin valmiin sudonkun 
      */
     public int[][] getValmiskarratta() {
         return valmiskarratta;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudokunGeneroiti;
+package sudokungeneroiti;
 
 /**
  *
@@ -13,9 +13,10 @@ public class Vaikeasudoku {
 
     private int[][] aloitukartta;
     /**
-     * toimii tieto varastona muutamalle sudoku variaationa
+     * toimii tieto varastona muutamalle sudoku variaationa.
      * 
-     * @param k int joka kertoo millaisen ruudukon haluaa palautta
+     * @param k int joka kertoo millaisen ruudukon haluaa palautta.
+     * 
      */
     public Vaikeasudoku(int k) {
         aloitukartta = new int[9][9];
@@ -35,14 +36,14 @@ public class Vaikeasudoku {
 
     }
     /**
+     * @return palauttaa varastoidun ruudukon.
      * 
-     * @return palauttaa varastoidun ruudukon 
      */
     public int[][] getAloitukartta() {
         return aloitukartta;
     }
     /**
-     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös.
      * 
      * @param t
      * @param y
@@ -52,7 +53,7 @@ public class Vaikeasudoku {
         aloitukartta[x][y] = t;
     }
     /**
-     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös.
      * 
      * @param t
      * @param y
@@ -62,7 +63,7 @@ public class Vaikeasudoku {
         lisaanumeroa(t, x, y);
     }
     /**
-     * metodedi jolla helpompi oli kirjottaa sudoku ylös
+     * metodedi jolla helpompi oli kirjottaa sudoku ylös.
      * 
      * @param k 
      */

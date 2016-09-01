@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sovellusLogiikka;
+package sovelluslogiikka;
 
 import javax.swing.SwingUtilities;
 import kayttoliityma.Kayttoliityma;
@@ -15,7 +15,7 @@ import kayttoliityma.Kayttoliityma;
 public class NewMain {
 
     /**
-     * @param args the command line arguments
+     * @param args the command line arguments.
      */
     public static void main(String[] args) {
 

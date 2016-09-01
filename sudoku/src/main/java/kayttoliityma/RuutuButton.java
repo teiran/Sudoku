@@ -6,7 +6,7 @@
 package kayttoliityma;
 
 import javax.swing.JButton;
-import sovellusLogiikka.Ruutu;
+import sovelluslogiikka.Ruutu;
 
 /**
  *
@@ -19,7 +19,8 @@ public class RuutuButton extends JButton {
     private boolean aktiivisuus; //mahdollistaa oikean ruudun hiirellä valitsemisen
     private boolean onkoasetettusudoku;
     /**
-     * on graafinen asu ruudulle on myös sovelluslogiikan ominaisuuksia
+     * on graafinen asu ruudulle on myös sovelluslogiikan ominaisuuksia.
+     * 
      */
     public RuutuButton() {
         this.setText("");
@@ -27,10 +28,12 @@ public class RuutuButton extends JButton {
     }
     /**
      * laittaa ruutuihin sudokun mukaiset numerot luo myös Ruutu olion jossa osa 
-     * sovelluslogiikan tiedoista
+     * sovelluslogiikan tiedoista.
      * 
-     * @param rat int ratkaisu ruudulle
-     * @param arvaus int arvaus ruudulle
+     * @param rat int ratkaisu ruudulle.
+     * 
+     * @param arvaus int arvaus ruudulle.
+     * 
      */
     public void setsudoku(int rat, int arvaus) {
         this.ruutu = new Ruutu(rat, arvaus);
@@ -45,9 +48,10 @@ public class RuutuButton extends JButton {
         onkoasetettusudoku = true;
     }
     /**
-     * tarkistaa arvaujsen
+     * tarkistaa arvaujsen.
      * 
-     * @return boolean palauttaa true jos on arvaus false jos ei ole
+     * @return boolean palauttaa true jos on arvaus false jos ei ole.
+     * 
      */
     public boolean isArvaus() {
         if (onkoasetettusudoku) {
@@ -60,9 +64,10 @@ public class RuutuButton extends JButton {
 
     }
     /**
-     * tutkii onko ruutu tarkistettu
+     * tutkii onko ruutu tarkistettu.
      * 
-     * @return boolean true jos ruutu on merkattu tarkistetuksi (ja siis oiken) ja false jos ei 
+     * @return boolean true jos ruutu on merkattu tarkistetuksi (ja siis oiken) ja false jos ei.
+     * 
      */
     public boolean getTarkistetu() {
         if (onkoasetettusudoku) {
@@ -71,9 +76,10 @@ public class RuutuButton extends JButton {
         return false;
     }
     /**
-     * SudokuruudunKeyKuuntelijan käyttämä metodi joka mahdollistaa ruudun arvon muutamisen
+     * SudokuruudunKeyKuuntelijan käyttämä metodi joka mahdollistaa ruudun arvon muutamisen.
      * 
-     * @param i int muokkaa ruudun arvausta jos sitä voi
+     * @param i int muokkaa ruudun arvausta jos sitä voi.
+     * 
      */
     //
     public void muutaarvausta(int i) {
@@ -86,7 +92,8 @@ public class RuutuButton extends JButton {
      * jos ruutu on valittu hiirellä sen arvo on true ja jos ei niin false
      * jos ruudun arvo on true siihen voi kirjottaa numeron.
      * 
-     * @return boolean true jos ruutu on aktiivinen false jos ei
+     * @return boolean true jos ruutu on aktiivinen false jos ei.
+     * 
      */
     public boolean getAktiivisuus() {
         if (onkoasetettusudoku) {
@@ -95,7 +102,7 @@ public class RuutuButton extends JButton {
         return false;
     }
     /**
-     * tarkistaa onko ruutu tarkistettu
+     * tarkistaa onko ruutu tarkistettu.
      * 
      */
     
@@ -112,7 +119,7 @@ public class RuutuButton extends JButton {
 
     }
     /**
-     * ruudun saadessa uuden arvauksen tämä muokka ruudun graafiikka sen mukaiseksi
+     * ruudun saadessa uuden arvauksen tämä muokka ruudun graafiikka sen mukaiseksi.
      * 
      */
     
@@ -132,7 +139,7 @@ public class RuutuButton extends JButton {
 
     }
     /**
-     * muuttaa ruudun aktivisuuden falseksi
+     * muuttaa ruudun aktivisuuden falseksi.
      * 
      */
     public void setAktiivisuusToFalse() {

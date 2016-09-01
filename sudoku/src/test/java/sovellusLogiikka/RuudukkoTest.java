@@ -5,6 +5,7 @@
  */
 package sovellusLogiikka;
 
+import sovelluslogiikka.Ruudukko;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

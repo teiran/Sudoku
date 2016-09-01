@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudokunGeneroiti;
+package sudokungeneroiti;
 
 /**
  *
@@ -14,9 +14,10 @@ public class Kartat {
     private int[][] valmiskartta;
     private int[][] aloitukartta;
     /**
-     * sovellus logiikan luokka mikä generoi tai kusuu valmiita sudokuja
+     * sovellus logiikan luokka mikä generoi tai kusuu valmiita sudokuja.
      * 
-     * @param q int 0-4 jonka perusteella konstuktori päättää mitä sudokua kutsutaan
+     * @param q int 0-4 jonka perusteella konstuktori päättää mitä sudokua kutsutaan.
+     * 
      */
     public Kartat(int q) {
         valmiskartta = new int[9][9];
@@ -123,15 +124,15 @@ public class Kartat {
 
     }
     /**
+     * @return int[][] palauttaa sudokun jossa vain alussa olevat ruudut.
      * 
-     * @return int[][] palauttaa sudokun jossa vain alussa olevat ruudut
      */
     public int[][] getAloitukartta() {
         return aloitukartta;
     }
-    /**
+    /** 
+     * @return int[][] palauttaa valmiin sudokun (lopputulos getAloituskartasta.
      * 
-     * @return int[][] palauttaa valmiin sudokun (lopputulos getAloituskartasta 
      */
     public int[][] getValmiskartta() {
         return valmiskartta;

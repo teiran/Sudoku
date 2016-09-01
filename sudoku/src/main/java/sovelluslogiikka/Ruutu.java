@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sovellusLogiikka;
+package sovelluslogiikka;
 
 /**
  *
@@ -16,9 +16,10 @@ public class Ruutu {
     private int arvaus;
     boolean aktiivisuus;
     /**
+     * @param rat int sudokuruudun ratkaisu.
      * 
-     * @param rat int sudokuruudun ratkaisu
-     * @param arc int sudokuruudun arvaus
+     * @param arc int sudokuruudun arvaus.
+     * 
      */
     public Ruutu(int rat, int arc) { //täytyy vielä kehittää sopiva errori jos rat ei ole 1-9 välillä
         arvaus = arc;
@@ -26,9 +27,9 @@ public class Ruutu {
         aktiivisuus = false;
 
     }
-    /**
+    /** 
+     * @param arvaus int muuttaa arvausta jos arvaus sudokun ruudun arvauksen rajoissa.
      * 
-     * @param arvaus int muuttaa arvausta jos arvaus sudokun ruudun arvauksen rajoissa
      */
     public void setArvaus(int arvaus) {
         if (0 < arvaus && 10 > arvaus) {
@@ -36,16 +37,16 @@ public class Ruutu {
         }
     }
     /**
+     * @return int palauttaa arvauksen.
      * 
-     * @return int palauttaa arvauksen 
      */
     public int getArvaus() {
         return arvaus;
     }
     
     /**
+     * @return int palauttaa ratkaisun.
      * 
-     * @return int palauttaa ratkaisun 
      */
 
     public int getRatkaisu() {
@@ -53,8 +54,8 @@ public class Ruutu {
     }
     
     /**
+     * @return boolean palauttaa onkoruutu oiken, true jos arvaus ja ratkaisu on sama, muuten false.
      * 
-     * @return boolean palauttaa onkoruutu oiken, true jos arvaus ja ratkaisu on sama, muuten false 
      */
     public boolean tarkista() {
         return (arvaus == ratkaisu);
